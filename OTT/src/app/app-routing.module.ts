@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login/<enter_login_component_name_here>', pathMatch: 'full'},
-    {path: "in",  loadChildren: () => import("./logged-in/logged-in.module").then(m => m.LoggedInModule)
-    //Lazy loading for logged in module has been done... 
+//  { path: '', redirectTo: 'login/LoginComponent', pathMatch: 'full'},
+    {path: "Auth",  loadChildren: () => import("./login/login.module").then(m => m.LoginModule)
+    //Lazy loading for login module 
   },
+  {path: "in",  loadChildren: () => import("./logged-in/logged-in.module").then(m => m.LoggedInModule)}
+  //Lazy loading for login module 
 ]
 
 @NgModule({
