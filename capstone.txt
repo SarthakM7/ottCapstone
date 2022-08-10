@@ -1,3 +1,6 @@
+trwsojao
+asasas
+
 create database capstone;
 use capstone;
 Create Table Users (id int primary key auto_increment not null, fname varchar(10), lname varchar(10),
