@@ -1,4 +1,2 @@
 # ottCapstone
 wejowqjeqowe
-
-vihsnu chutya
