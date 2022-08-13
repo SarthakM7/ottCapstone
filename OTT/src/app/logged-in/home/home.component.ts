@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit {
   }
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
+    mouseDrag: true,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 600,
     navText: ['&#8249', '&#8250;'],
     responsive: {
@@ -28,9 +28,6 @@ export class HomeComponent implements OnInit {
       },
       760: {
         items: 3
-      },
-      1000: {
-        items: 4
       }
     },
     nav: true

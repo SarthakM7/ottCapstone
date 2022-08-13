@@ -19,7 +19,7 @@ public class JdbcConnectionApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		String sql= "Insert into Users(id, fname, lname, password, mobile, email, accType) Values (?,?,?,?,?,?,?)";
-		int result= jdbcTemplate.update(sql, 2, "Sreevishnu", "Achanta","1234567890", "9848022338", "sreevishnu@F.com", true);
+		int result= jdbcTemplate.update(sql, 3, "Aviraj", "Ranawat","1234567890", "7010818891", "aviraj@F.com", true);
 		
 		
 		if(result>0) {
