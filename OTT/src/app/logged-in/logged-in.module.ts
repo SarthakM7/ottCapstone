@@ -5,11 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { MovieComponent } from './movie/movie.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
 const routes: Routes = [
-  {path:"",component: HomeComponent}
+  {path:"",component: HomeComponent},
+  {path:"movies/:id",component: MovieComponent},
 ];
 
 

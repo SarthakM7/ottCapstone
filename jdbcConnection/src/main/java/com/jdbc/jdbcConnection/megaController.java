@@ -1,10 +1,15 @@
 package com.jdbc.jdbcConnection;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+
 
 @RestController
 public class megaController {
@@ -22,28 +27,29 @@ public class megaController {
 	
 	@RequestMapping("/users")
 	@ResponseBody
-	public String getUsers() {
-		return repo.findAll().toString(); //to get all users from DB
+	public List getUsers() {
+		return repo.findAll(); //to get all users from DB
 	}
 	
 	@RequestMapping("users/{id}")
 	@ResponseBody
-	public String getUsers(@PathVariable("id") int id) {
+	public Optional<users> getUsers(@PathVariable("id") int id) {
 		//System.out.println(repo);
-		return repo.findById(id).toString(); //specific user details from DB
+		return repo.findById(id); //specific user details from DB
 	}
 	
 	@RequestMapping("/movies")
 	@ResponseBody
-	public String getMovies() {
-		return repo2.findAll().toString(); //Movies DB full display
+	public List getMovies() {
+		
+		return repo2.findAll(); //Movies DB full display
 	}
 	
 	@RequestMapping("movies/{id}")
 	@ResponseBody
-	public String getMovies(@PathVariable("id") int id) {
+	public Optional<movies> getMovies(@PathVariable("id") int id) {
 		//System.out.println(repo);
-		return repo2.findById(id).toString();//specific movie details from DB
+		return repo2.findById(id);//specific movie details from DB
 	}
 
 }
