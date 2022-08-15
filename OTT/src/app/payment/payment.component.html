@@ -1,75 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta
-	name="viewport"
-	content="width=device-width,
-			initial-scale=1.0"/>
-	<link rel="stylesheet" href="payment.component.css"
-		class="css" />
+	<meta name="viewport" content="width=device-width,
+			initial-scale=1.0" />
+	<link rel="stylesheet" href="payment.component.css" class="css" />
 </head>
+
 <body>
 	<div class="container">
-	<div class="main-content">
-		<p class="text"></p>
-	</div>
+		<div class="main-content">
+			<p class="text"></p>
+		</div>
 
-	<div class="centre-content">
-		<h1 class="price">Now only at ₹119 per month<span>/-</span></h1>
-		<p class="course">
-		Amazon Prime
-		</p>
-	</div>
+		<div class="centre-content">
+			<h1 class="price">Now only at ₹119 per month<span>/-</span></h1>
+			<p class="course">
+				Amazon Prime
+			</p>
+		</div>
 
-	<div class="last-content">
-		<button type="button" class="pay-now-btn">
-		Apply Coupons
-		</button>
-		<button type="button" class="pay-now-btn">
-		Pay with Netbanking
-		</button>
+		<div class="last-content">
+			<button type="button" class="pay-now-btn">
+				Apply Coupons
+			</button>
+			<button type="button" class="pay-now-btn">
+				Pay with Netbanking
+			</button>
 
-		<!-- <button type="button" class="pay-now-btn">
+			<!-- <button type="button" class="pay-now-btn">
 		Netbanking options
 		</button> -->
-	</div>
+		</div>
+		<form [formGroup]="payForm">
+			<div class="card-details">
+				<p>Pay using Credit/Debit card</p>
 
-	<div class="card-details">
-		<p>Pay using Credit/Debit card</p>
+				<div class="card-number">
+					<label> Card Number </label>
+					<input formControlName="cn" type="text" class="card-number-field" placeholder="###-###-###" />
+					<div *ngIf="payForm.get('cn')?.invalid">card number invalid</div>
+				</div>
+				<br />
+				<div class="date-number">
+					<label> Expiry Date </label>
+					<input type="date" formControlName="ed" class="date-number-field" placeholder="DD-MM-YY" id="ed" />
+				</div>
 
-		<div class="card-number">
-		<label> Card Number </label>
-		<input
-			type="text"
-			class="card-number-field"
-			placeholder="###-###-###"/>
-		</div>
-		<br />
-		<div class="date-number">
-		<label> Expiry Date </label>
-		<input type="text" class="date-number-field"
-				placeholder="DD-MM-YY" />
-		</div>
-
-		<div class="cvv-number">
-		<label> CVV number </label>
-		<input type="text" class="cvv-number-field"
-				placeholder="xxx" />
-		</div>
-		<div class="nameholder-number">
-		<label> Card Holder name </label>
-		<input
-			type="text"
-			class="card-name-field"
-			placeholder="Enter your Name"/>
-		</div>
-		<button type="submit"
-				class="submit-now-btn">
-		submit
-		</button>
-	</div>
+				<div class="cvv-number">
+					<label> CVV number </label>
+					<input type="text" formControlName="cvv" class="cvv-number-field" placeholder="xxx" id="cvv" />
+					<div *ngIf="payForm.get('cvv')?.invalid">cvv invalid</div>
+				</div>
+				<div class="nameholder-number">
+					<label> Card Holder name </label>
+					<input type="text" formControlName="name" class="card-name-field" placeholder="Enter your Name"
+						id="name" />
+						<div *ngIf="payForm.get('name')?.invalid">name invalid</div>
+				</div>
+				<button type="submit" class="submit-now-btn">
+					submit
+				</button>
+			</div>
+		</form>
 	</div>
 </body>
+
 </html>
