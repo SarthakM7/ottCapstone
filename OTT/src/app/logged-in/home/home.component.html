@@ -12,13 +12,6 @@
 </owl-carousel-o>
 <br>
 
-<tr *ngFor="let movie of movies;">
-  <div *ngIf="movie.movielang ==='Hindi'">
-    <td>{{movie.moviename}}</td>
-  </div>
-</tr>
-
-
 <h1>Hindi Movies</h1>
 <owl-carousel-o [options]="customOptions">
   <ng-template carouselSlide *ngFor="let movie of movies.slice(0,10);">
@@ -58,3 +51,18 @@
   </ng-template>
 </owl-carousel-o>
 <br>
+
+<h1>Horror Movies</h1>
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor="let movie of horrorMovies">
+    <div class="slide mx-2">
+      <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{movie.moviename}}</h5>
+      </div>
+    </div>
+  </ng-template>
+
+</owl-carousel-o>
+<br>
+

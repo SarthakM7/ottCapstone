@@ -37,5 +37,14 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Aviraj.Ranawat/.m2/repository/org/springframework/data/spring-data-rest-core/3.7.2/spring-data-rest-core-3.7.2.jar" sourcepath="C:/Users/Aviraj.Ranawat/.m2/repository/org/springframework/data/spring-data-rest-core/3.7.2/spring-data-rest-core-3.7.2-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework.data"/>
+			<attribute name="maven.artifactId" value="spring-data-rest-core"/>
+			<attribute name="maven.version" value="3.7.2"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
