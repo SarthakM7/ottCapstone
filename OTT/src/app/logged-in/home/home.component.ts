@@ -10,6 +10,7 @@ import { AllServiceService } from 'src/app/all-service.service';
 export class HomeComponent implements OnInit {
   movies:any;
   hindiMovies:any;
+  index=0;
   constructor(private allServices: AllServiceService) { }
   ngOnInit(): void {
     this.retrieveAllMovies();

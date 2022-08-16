@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
-import { UserPay } from '../total.service';
+// import { UserPay } from '../total.service';
 
 @Component({
   selector: 'app-payment',

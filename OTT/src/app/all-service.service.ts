@@ -12,10 +12,11 @@ export class AllServiceService {
   
 
   constructor(private http : HttpClient) { }
+
   getAllMovies(): Observable<any> {
     return this.http.get<any>(`${baseUrl}/movies`)
-    
   }
+
   getmovie(id: any): Observable<any> {
     return this.http.get(`${baseUrl}/movies/${id}`);
   }
@@ -28,7 +29,6 @@ export class AllServiceService {
     return this.http.get(`${baseUrl}/users/${id}`);
   }
 
-  
 }
 
 
