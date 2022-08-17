@@ -7,6 +7,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TemplateComponent } from './template/template.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     MovieComponent,
-    TemplateComponent
+    TemplateComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
