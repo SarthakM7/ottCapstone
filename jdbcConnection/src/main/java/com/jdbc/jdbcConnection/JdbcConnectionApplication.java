@@ -7,16 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootApplication
-public class JdbcConnectionApplication{
+public class JdbcConnectionApplication {
 //public class JdbcConnectionApplication implements CommandLineRunner{
 
 	@Autowired
-	private JdbcTemplate jdbcTemplate;	
-	
-	public static void main(String[] args) 
-	{
+	private JdbcTemplate jdbcTemplate;
+
+	public static void main(String[] args) {
 		SpringApplication.run(JdbcConnectionApplication.class, args);
 	}
-
-	}
-
+}

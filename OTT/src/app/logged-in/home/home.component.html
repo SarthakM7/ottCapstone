@@ -1,3 +1,12 @@
+<!-- <form [formGroup]="filter">
+  <label for="lang">lang:</label>
+    <select formControlName="lang" class="form-control">
+      <option>Choose lang</option>
+      <option *ngFor="let lang of languages">{{lang}}</option>
+    </select>
+</form> -->
+
+
 <h1>All Movies</h1>
 <owl-carousel-o [options]="customOptions">
   <ng-template carouselSlide *ngFor="let movie of movies">
@@ -12,6 +21,66 @@
 </owl-carousel-o>
 <br>
 
+
+<div class="col">
+  <h3>Filter by language:</h3>
+  <select #lang (change)="onSelected(lang.value)">
+    <option default>Pick a lang</option>
+    <option>English</option>
+    <option>Hindi</option>
+    <option>Telugu</option>
+  </select>
+</div>
+
+<div *ngIf="selectedLang ==='Hindi'">
+  <h1>Hindi Movies</h1>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let movie of hindiMovies">
+      <div class="slide mx-2">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{movie.moviename}}</h5>
+        </div>
+      </div>
+    </ng-template>
+
+  </owl-carousel-o>
+  <br>
+</div>
+
+
+<div *ngIf="selectedLang ==='English'">
+  <h1>Enlgish Movies</h1>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let movie of englishMovies">
+      <div class="slide mx-2">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{movie.moviename}}</h5>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+  <br>
+</div>
+
+<div *ngIf="selectedLang ==='Telugu'">
+  <h1>Telugu Movies</h1>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let movie of teluguMovies">
+      <div class="slide mx-2">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{movie.moviename}}</h5>
+        </div>
+      </div>
+    </ng-template>
+
+  </owl-carousel-o>
+  <br>
+</div>
+
+<!-- 
 <h1>Hindi Movies</h1>
 <owl-carousel-o [options]="customOptions">
   <ng-template carouselSlide *ngFor="let movie of movies.slice(0,10);">
@@ -24,45 +93,96 @@
   </ng-template>
 </owl-carousel-o>
 <br>
+-->
+<div class="col">
+  <h3>Filter by genre:</h3>
+  <select #genre (change)="onSelectedGenre(genre.value)">
+    <option default>Pick a genre</option>
+    <option>Horror</option>
+    <option>Comedy</option>
+    <option>Romance</option>
+    <option>Drama</option>
+    <option>Thriller</option>
+  </select>
+</div>
 
-<h1>Telugu Movies</h1>
-<owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide *ngFor="let movie of movies.slice(10,20);">
-    <div class="slide mx-2" *ngIf="movie.movielang ==='Telugu'">
-      <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{movie.moviename}}</h5>
+<div *ngIf="selectedGenre ==='Horror'">
+  <h1>Horror Movies</h1>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let movie of horrorMovies">
+      <div class="slide mx-2">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{movie.moviename}}</h5>
+        </div>
       </div>
-    </div>
-  </ng-template>
-</owl-carousel-o>
-<br>
+    </ng-template>
 
-<h1>English Movies</h1>
-<owl-carousel-o [options]="customOptions">
+  </owl-carousel-o>
+  <br>
+</div>
 
-  <ng-template carouselSlide *ngFor="let movie of movies.slice(20,30);">
-    <div class="slide mx-2" *ngIf="movie.movielang ==='English'">
-      <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{movie.moviename}}</h5>
+
+<div *ngIf="selectedGenre ==='Comedy'">
+  <h1>Comedy Movies</h1>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let movie of comedyMovies">
+      <div class="slide mx-2">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{movie.moviename}}</h5>
+        </div>
       </div>
-    </div>
-  </ng-template>
-</owl-carousel-o>
-<br>
+    </ng-template>
 
-<h1>Horror Movies</h1>
-<owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide *ngFor="let movie of horrorMovies">
-    <div class="slide mx-2">
-      <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{movie.moviename}}</h5>
+  </owl-carousel-o>
+  <br>
+</div>
+
+<div *ngIf="selectedGenre ==='Romance'">
+  <h1>Romantic Movies</h1>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let movie of romanceMovies">
+      <div class="slide mx-2">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{movie.moviename}}</h5>
+        </div>
       </div>
-    </div>
-  </ng-template>
+    </ng-template>
 
-</owl-carousel-o>
-<br>
+  </owl-carousel-o>
+  <br>
+</div>
 
+<div *ngIf="selectedGenre ==='Drama'">
+  <h1>Drama Movies</h1>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let movie of dramaMovies">
+      <div class="slide mx-2">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{movie.moviename}}</h5>
+        </div>
+      </div>
+    </ng-template>
+
+  </owl-carousel-o>
+  <br>
+</div>
+
+<div *ngIf="selectedGenre ==='Thriller'">
+  <h1>Thriller Movies</h1>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let movie of thrillerMovies">
+      <div class="slide mx-2">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{movie.moviename}}</h5>
+        </div>
+      </div>
+    </ng-template>
+
+  </owl-carousel-o>
+  <br>
+</div>

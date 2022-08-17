@@ -42,10 +42,10 @@ export class PaymentComponent {
 
     validatecvv(control:AbstractControl):ValidationErrors | null{
       // const reCn = /^[0-9]+$/
-      const reCn = /^[0-9]+$/
+      const reCvv = /^[0-9]+$/
 
       // console.log(this.reCn.test(control.value.toString()));
-      if(control.value.toString().length!=3 || !reCn.test(control.value.toString()) )
+      if(control.value.toString().length!=3 || !reCvv.test(control.value.toString()) )
       {
         return {invalid: true};
       }
@@ -56,9 +56,9 @@ export class PaymentComponent {
 
     validatename(control:AbstractControl):ValidationErrors | null{
       // const reCn = /^[A-Za-z0-9]+$/
-      const reCn = /^[A-Za-z\s]+$/
+      const reName = /^[A-Za-z\s]+$/
       // console.log(this.reCn.test(control.value.toString()));
-      if( !reCn.test(control.value.toString()) )
+      if( !reName.test(control.value.toString()) )
       {
         return {invalid: true};
       }

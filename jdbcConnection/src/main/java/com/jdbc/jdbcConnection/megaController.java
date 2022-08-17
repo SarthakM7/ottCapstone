@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
 @RestController
 public class megaController {
 
@@ -51,6 +50,4 @@ public class megaController {
 		//System.out.println(repo);
 		return repo2.findById(id);//specific movie details from DB
 	}
-
 }
-
