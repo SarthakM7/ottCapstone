@@ -1,10 +1,10 @@
 package com.jdbc.jdbcConnection;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+//import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 
-@RepositoryRestResource(collectionResourceRel = "movies" , path = "movies")
+//@RepositoryRestResource(collectionResourceRel = "movies" , path = "movies")
 public interface moviesRepo extends JpaRepository<movies, Integer>{
 
 }
