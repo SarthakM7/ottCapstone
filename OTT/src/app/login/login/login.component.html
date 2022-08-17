@@ -1,1 +1,17 @@
-<p>login works!</p>
+<h1>Welcome</h1>
+<div class="login-page">
+    <div class="form">
+        <div class="login">
+            <div class="login-header">
+                <h3>LOGIN</h3>
+                <p>Enter Credentials</p>
+            </div>
+        </div>
+        <form class="login-form">
+            <input #username type="text" placeholder="Username" />
+            <input #password type="password" placeholder="Password" />
+            <button (click)="validateCheck(username,password)">Login</button>
+            <p class="message">Not registered? Sign Up</p>
+        </form>
+    </div>
+</div>

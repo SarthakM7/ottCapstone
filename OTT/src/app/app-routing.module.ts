@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieComponent } from './logged-in/movie/movie.component';
 import { TemplateComponent } from './logged-in/template/template.component';
