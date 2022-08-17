@@ -4,12 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieComponent } from './movie/movie.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TemplateComponent } from './template/template.component';
 import { ProfileComponent } from './profile/profile.component';
-
-
 
 const routes: Routes = [
   {path:"",component: HomeComponent},
