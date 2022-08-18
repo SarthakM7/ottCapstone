@@ -4,8 +4,13 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieComponent } from './movie/movie.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { TemplateComponent } from './template/template.component';
-import { ProfileComponent } from './profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+
+
 
 const routes: Routes = [
   {path:"",component: HomeComponent},
@@ -17,8 +22,9 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     MovieComponent,
-    TemplateComponent,
-    ProfileComponent
+    AboutComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

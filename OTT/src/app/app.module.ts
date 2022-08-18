@@ -9,14 +9,17 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './logged-in/home/home.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PaymentComponent
+    PaymentComponent,
+    NotfoundComponent
+    
   ],
   imports: [
     BrowserModule,

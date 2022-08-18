@@ -1,9 +1,15 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AboutComponent } from './logged-in/about/about.component';
+
 import { MovieComponent } from './logged-in/movie/movie.component';
 import { ProfileComponent } from './logged-in/profile/profile.component';
-import { TemplateComponent } from './logged-in/template/template.component';
+// import { TemplateComponent } from './logged-in/template/template.component';
+
+import { NotfoundComponent } from './notfound/notfound.component';
 import { PaymentComponent } from './payment/payment.component';
+
 
 const routes: Routes = [
 //  { path: '', redirectTo: 'login/LoginComponent', pathMatch: 'full'},
@@ -13,14 +19,17 @@ const routes: Routes = [
   {path: "in",  loadChildren: () => import("./logged-in/logged-in.module").then(m => m.LoggedInModule)},
   //Lazy loading for login module 
   {
-    path: 'pay', component: PaymentComponent,
+    path: 'pay', component: PaymentComponent
   },
   {
     path: 'movie', component: MovieComponent //Movie Component can be child of Home and Child activation as well
   },
-  {path: 'temp', component: TemplateComponent},
-  {path:'profile',component:ProfileComponent}
+ 
+  {path:'profile',component:ProfileComponent},
 
+  {path: 'about', component: AboutComponent},
+  
+  {path: '**', component:NotfoundComponent}
 ]
 
 @NgModule({
