@@ -11,23 +11,21 @@ import { AllServiceService } from 'src/app/all-service.service';
 })
 export class HomeComponent implements OnInit {
   movies: any;
-
   hindiMovies: any[] = [];
   englishMovies: any[] = [];
   teluguMovies: any[] = [];
-
   horrorMovies: any[] = [];
   comedyMovies: any[] = [];
   romanceMovies: any[] = [];
   dramaMovies: any[] = [];
   thrillerMovies: any[] = [];
-
   index = 0;
-
   selectedLang = '';
   selectedGenre = '';
 
   users:any;
+
+
   constructor(private allServices: AllServiceService) { }
   ngOnInit(): void {
     this.retrieveAllMovies();
