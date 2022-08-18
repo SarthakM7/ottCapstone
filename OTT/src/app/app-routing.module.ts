@@ -8,6 +8,7 @@ import { MovieComponent } from './logged-in/movie/movie.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { PaymentComponent } from './payment/payment.component';
 
+
 const routes: Routes = [
 //  { path: '', redirectTo: 'login/LoginComponent', pathMatch: 'full'},
     {path: "Auth",  loadChildren: () => import("./login/login.module").then(m => m.LoginModule)

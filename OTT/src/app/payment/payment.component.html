@@ -39,7 +39,9 @@
 				<div class="card-number">
 					<label> Card Number </label>
 					<input formControlName="cn" type="text" class="card-number-field" placeholder="###-###-###" />
-					<div *ngIf="payForm.get('cn')?.invalid"><h6>card number invalid</h6></div>
+					<div *ngIf="payForm.get('cn')?.invalid">
+						<h6>card number invalid</h6>
+					</div>
 				</div>
 				<br />
 				<div class="date-number">
@@ -50,7 +52,9 @@
 				<div class="cvv-number">
 					<label> CVV number </label>
 					<input type="text" formControlName="cvv" class="cvv-number-field" placeholder="xxx" id="cvv" />
-					<div *ngIf="payForm.get('cvv')?.invalid"><h6>cvv invalid</h6></div>
+					<div *ngIf="payForm.get('cvv')?.invalid">
+						<h6>cvv invalid</h6>
+					</div>
 				</div>
 				<br>
 				<div class="nameholder-number">
