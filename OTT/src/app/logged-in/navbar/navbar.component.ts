@@ -1,21 +1,17 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-template',
-  templateUrl: './template.component.html',
-  styleUrls: ['./template.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class TemplateComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
-  constructor() {}
-  
+  constructor() { }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  };
- 
-  
-    
+  }
+
   @HostListener('window:scroll', ['$event']) onScrollEvent($event: any){
     //console.log($event);
     //console.log("scrolling");
@@ -29,13 +25,5 @@ export class TemplateComponent implements OnInit {
     navbarCollapsible.classList.add('navbar-shrink')
 }
   } 
-     
-    
-    
-    
-    
-   
-    
-    }
 
-
+}

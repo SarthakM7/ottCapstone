@@ -5,7 +5,17 @@
       <option *ngFor="let lang of languages">{{lang}}</option>
     </select>
 </form> -->
-
+<app-navbar></app-navbar>
+<!-- Masthead-->
+<header class="masthead">
+  <div class="container">
+      <img src="assets/logo_White-removebg-preview1.png" alt="Branding-Logo" style="padding-bottom: 10px;">
+      
+      <div class="masthead-subheading">Get <strong>Classic, Legendary and Evergreen</strong> Movies right here.</div>
+      
+      <a class="btn btn-primary btn-xl text-uppercase">Tell Me More</a>
+  </div>
+</header>
 
 <h1>All Movies</h1>
 <owl-carousel-o [options]="customOptions">
@@ -186,3 +196,4 @@
   </owl-carousel-o>
   <br>
 </div>
+<app-footer></app-footer>

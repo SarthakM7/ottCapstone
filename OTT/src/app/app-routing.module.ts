@@ -1,7 +1,11 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AboutComponent } from './logged-in/about/about.component';
+
 import { MovieComponent } from './logged-in/movie/movie.component';
-import { TemplateComponent } from './logged-in/template/template.component';
+
+import { NotfoundComponent } from './notfound/notfound.component';
 import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
@@ -17,7 +21,9 @@ const routes: Routes = [
   {
     path: 'movie', component: MovieComponent //Movie Component can be child of Home and Child activation as well
   },
-  {path: 'temp', component: TemplateComponent}
+  {path: 'about', component: AboutComponent},
+  
+  {path: '**', component:NotfoundComponent}
 ]
 
 @NgModule({
