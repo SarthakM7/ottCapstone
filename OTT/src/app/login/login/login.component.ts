@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AllServiceService } from 'src/app/all-service.service';
-import { HomeComponent } from 'src/app/logged-in/home/home.component';
-import { LoggedInModule } from 'src/app/logged-in/logged-in.module';
+
 
 @Component({
   selector: 'app-login',
@@ -18,18 +16,17 @@ export class LoginComponent implements OnInit {
 
   public loginForm!: FormGroup;
   
-  constructor(private allServices: AllServiceService, private route: Router, private http:HttpClient, private formbuilder: FormBuilder ) { }
+  constructor(private formbuilder: FormBuilder,public allServices: AllServiceService, private route: Router  ) { }
   
   ngOnInit(): void {
     this.retrieveAllUsers();
     console.log(this.users);
 
-    // this.loginForm = this.formbuilder.group({
-    //   email: ['', [Validators.required, Validators.email]],
-    //   password: ['', [Validators.required]],
-    //   active :Boolean,
-      
-    // })
+    this.loginForm = this.formbuilder.group({
+      email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+.com$")]],
+      password: ['', [Validators.required]],
+      active :Boolean,
+     })
   }
 
 
@@ -41,31 +38,33 @@ export class LoginComponent implements OnInit {
         console.log(error);
       })
   }
-  validateCheck(username:HTMLInputElement, password:HTMLInputElement):boolean{
+  validateCheck():void{
     
-    let un = username.value;
-    let pw = password.value;
     let i=0;
     let flag = false;
 
     for(i=0; i<this.users.length;i++){
-      if(un==this.users[i].email && pw==this.users[i].password){
-        // this.route.navigate(["home"]);
+      if(this.loginForm.value.email==this.users[i].email && this.loginForm.value.password==this.users[i].password){
+        
         flag=true;
+        
         break;
       }
     }
 
     if(flag){
-      window.alert("works");
-      this.route.navigate(['/in']);
-      //this.route.navigate(['../../in'])
+      //window.alert("works");
+      this.loginForm.reset();
       flag=false;
+      this.allServices.userLoggedinID=i;
+      window.alert(this.allServices.userLoggedinID);
+      this.route.navigate(['/in']);
     }
     else{
-      window.alert("does not work");
+    //window.alert("No user with this credentials");
+      this.loginForm.reset();
     }
-    return flag;
+    
   }
 
 }

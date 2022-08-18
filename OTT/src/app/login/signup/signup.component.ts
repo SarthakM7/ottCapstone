@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AllServiceService } from 'src/app/all-service.service';
 import { Users } from 'src/app/users';
 
@@ -11,24 +11,26 @@ import { Users } from 'src/app/users';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private allServices: AllServiceService,private formbuilder:FormBuilder) { }
   User:Users[]=[];
-  signupForm!: FormGroup;
+  public signupForm!: FormGroup;
+  constructor(private formbuilder:FormBuilder,private allServices: AllServiceService) { }
+  
   ngOnInit(): void {
+
     
     this.signupForm = this.formbuilder.group({
-      fname :    [''],
-      lname :    [''],
-      mobile:    [''],
-      email:    [''],
-      password:    ['']
+      fname: ['', [Validators.required, Validators.pattern("^[a-zA-Z]+$")]],
+      lname: ['', [Validators.required, Validators.pattern("^[a-zA-Z]+$")]],
+      mobile: ['', [Validators.required, Validators.pattern('^(?=.*?[0-9]).{10,10}$')]],
+      email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+.com$")]],
+      password: ['', [Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&#._])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{5,10}')]],
+      active :Boolean,
     })
       
 
   }
 
   public AddUser(): void{
-    // document.getElementById('add-user-form')?.click();
     this.allServices.addUser(this.signupForm.value).subscribe(
       data => {
         alert("Data sent successfully")

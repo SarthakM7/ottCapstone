@@ -11,6 +11,7 @@ const baseUrl = "http://localhost:8080"
 })
 export class AllServiceService {
   
+  public userLoggedinID!: number;
 
   constructor(private http : HttpClient) { }
 

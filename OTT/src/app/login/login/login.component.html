@@ -1,17 +1,32 @@
-<h1>Welcome</h1>
-<div class="login-page">
-    <div class="form">
-        <div class="login">
-            <div class="login-header">
-                <h3>LOGIN</h3>
-                <p>Enter Credentials</p>
+<div class="background">
+    <div class="blur">
+
+        <div class="d-flex justify-content-center">
+
+            <div class="card w-25 bg-transparent my-5">
+                <form [formGroup]='loginForm'>
+                    <div class="card-header">
+                        <h3 class="my-2">Log In</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title my-2">Email</h5>
+                        <input type="email" formControlName="email" email placeholder="Enter your email address" class="form-control my-2" >
+                        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)" class="text-white">Please enter a valid email address</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title my-2">Password</h5>
+                        <input type="password" formControlName="password" placeholder="Enter your password" class="form-control my-2" >
+                        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)" class="text-white">Please enter a valid password</div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        
+                        <button class="btn btn-primary text-black" [disabled]="!loginForm.valid" (click)="validateCheck()">Log in</button>
+                    </div>
+                </form>
+                <button class="btn"><a routerLink="../signup" class="text-black" >Not a user? Sign up</a></button>
             </div>
+
+
         </div>
-        <form class="login-form">
-            <input #username type="text" placeholder="Username" />
-            <input #password type="password" placeholder="Password" />
-            <button (click)="validateCheck(username,password)">Login</button>
-            <p class="message">Not registered? Sign Up</p>
-        </form>
     </div>
 </div>
