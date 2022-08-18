@@ -10,7 +10,6 @@ import { AllServiceService } from 'src/app/all-service.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-<<<<<<< Updated upstream
   movies: any;
 
   hindiMovies: any[] = [];
@@ -28,11 +27,7 @@ export class HomeComponent implements OnInit {
   selectedLang = '';
   selectedGenre = '';
 
-=======
-  movies:any;
   users:any;
-  hindiMovies:any;
->>>>>>> Stashed changes
   constructor(private allServices: AllServiceService) { }
   ngOnInit(): void {
     this.retrieveAllMovies();
