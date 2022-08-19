@@ -14,7 +14,7 @@ export class MovieComponent implements OnInit {
   users:any;
   safeSrc: any; 
   currUser:any
-  constructor(private allServices: AllServiceService, private router: Router,private sanitizer: DomSanitizer) { }
+  constructor(private allServices: AllServiceService, private router: Router,private sanitizer: DomSanitizer, private _router: Router) { }
 
   ngOnInit(): void {
     this.retrieveAllMovies();
@@ -73,4 +73,9 @@ export class MovieComponent implements OnInit {
         console.log(error);
       })
   }
+  buy()
+  {
+    this._router.navigateByUrl("/pay")
+  }
+
 }

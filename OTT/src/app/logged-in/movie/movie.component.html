@@ -1,17 +1,23 @@
-<!-- <app-navbar></app-navbar> -->
+<app-navbar></app-navbar>
 <br>
 <div class="container">
     <h1>Movie Name: {{here.moviename}}</h1>
     <h3>Genre: {{here.genre}}</h3>
-    
-<iframe width="560" height="315" [src]=" safeSrc" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    <!-- ksadjsak<br>
+    {{here.tralier}}
+    {{safeSrc}}
+    aijdaskda -->
+    <!-- slim@shady.com -->
+    <div *ngIf="currUser.accType==1 || here.moviestatus==0 ; else mat_dekh">
+        <iframe width="560" height="315" [src]=" safeSrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <!-- hewllo {{here.moviename}} sodjas -->
     </div>
     <ng-template #mat_dekh>
-         beti bech aur premium kharid
+        <br><br>
+         <h3>beti bech aur premium kharid</h3><br>
+         <button (click)="buy()"><h4>buy premium?</h4></button>
     </ng-template>
 
-
+</div>
 <app-footer></app-footer>
