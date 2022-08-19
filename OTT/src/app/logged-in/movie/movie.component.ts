@@ -13,11 +13,14 @@ export class MovieComponent implements OnInit {
   here:any;
   users:any;
   safeSrc: any; 
+  currUser:any
   constructor(private allServices: AllServiceService, private router: Router,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.retrieveAllMovies();
     this.retrieveIdMovies(this.allServices.tempo);
+    this.retrieveAllUsers();
+    this.retrieveIdUsers(this.allServices.userLoggedinID);
     
   }
 
@@ -36,13 +39,14 @@ export class MovieComponent implements OnInit {
     this.allServices.getmovie(id).subscribe(data => {
       console.log("inside retidmovie"+id);
       this.here = JSON.parse(JSON.stringify(data));
-      console.log(this.movies);
-      console.log("inside movie trailer:  "+this.here.tralier);
-      console.log("inside movie"+this.here.moviename);
-      console.log("safe?");
+      // console.log(this.movies);
+      // console.log("inside movie trailer:  "+this.here.tralier);
+      // console.log("inside movie"+this.here.moviename);
+      // console.log("safe?");
     this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.here.tralier);
-    console.log("safe: "+this.safeSrc);
-    console.log("end");
+    // console.log("safe: "+this.safeSrc);
+    // console.log("end");
+    // console.log("usre id"+this.allServices.userLoggedinID)
     },
       error => {
         console.log(error);
@@ -52,7 +56,7 @@ export class MovieComponent implements OnInit {
 
   retrieveAllUsers(): void {
     this.allServices.getAllUsers().subscribe(data => {
-      this.movies = JSON.parse(JSON.stringify(data));
+      this.users = JSON.parse(JSON.stringify(data));
       console.log(this.movies);
     },
       error => {
@@ -61,9 +65,9 @@ export class MovieComponent implements OnInit {
   }
 
   retrieveIdUsers(id: any): void {
-    this.allServices.getuser(id).subscribe(data => {
-      this.movies = JSON.parse(JSON.stringify(data));
-      console.log(this.movies);
+    this.allServices.getuser(id+1).subscribe(data => {
+      this.currUser = JSON.parse(JSON.stringify(data));
+      console.log(this.currUser.fname);
     },
       error => {
         console.log(error);

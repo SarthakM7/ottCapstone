@@ -24,7 +24,7 @@
 <owl-carousel-o [options]="customOptions">
   <ng-template carouselSlide *ngFor="let movie of movies">
     <div class="slide mx-2">
-      <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" routerLink = "movies/{{movie.id}}">
+      <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
       <div class="carousel-caption d-none d-md-block">
         <h5>{{movie.moviename}}</h5>
         <!-- <a routerLink = "movies/{{movie.id}}"><h5>{{movie.moviename}}</h5></a> -->
@@ -51,7 +51,7 @@
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of hindiMovies">
       <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" routerLink = "movies/{{movie.id}}">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{movie.moviename}}</h5>
         </div>
@@ -67,7 +67,7 @@
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of englishMovies">
       <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" routerLink = "movies/{{movie.id}}">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{movie.moviename}}</h5>
         </div>
@@ -82,7 +82,7 @@
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of teluguMovies">
       <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" routerLink = "movies/{{movie.id}}">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{movie.moviename}}</h5>
         </div>
@@ -124,7 +124,7 @@
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of horrorMovies">
       <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" routerLink = "movies/{{movie.id}}">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{movie.moviename}}</h5>
         </div>
@@ -141,7 +141,7 @@
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of comedyMovies">
       <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" routerLink = "movies/{{movie.id}}">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{movie.moviename}}</h5>
         </div>
@@ -173,7 +173,7 @@
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of dramaMovies">
       <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" routerLink = "movies/{{movie.id}}">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{movie.moviename}}</h5>
         </div>
@@ -189,7 +189,7 @@
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of thrillerMovies">
       <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" routerLink = "movies/{{movie.id}}">
+        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{movie.moviename}}</h5>
         </div>

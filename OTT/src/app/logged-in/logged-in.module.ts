@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SafePipe } from '../safe.pipe';
+
 
 
 
@@ -29,7 +29,7 @@ const routes: Routes = [
     AboutComponent,
     NavbarComponent,
     FooterComponent,
-    SafePipe
+    
   ],
   imports: [
     CommonModule,

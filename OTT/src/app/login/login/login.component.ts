@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit {
       flag=false;
       this.allServices.userLoggedinID=i;
       window.alert(this.allServices.userLoggedinID);
+      console.log("user no"+this.allServices.userLoggedinID); 
       this.route.navigate(['/in']);
     }
     else{
