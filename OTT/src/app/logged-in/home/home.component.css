@@ -6,7 +6,28 @@
         body {
             background: hsl(0, 0, 94%);
         }
-
-        
-
+        video {
+            position:relative;
+            z-index:0;
+        }
+        .overlay1 {
+            position:absolute;
+            top:10%;
+          left:30%;
+            z-index:1;
+            height: 180px;
+            width: 450px;
+        }
+        .overlay2 {
+            position:absolute;
+            top:23%;
+          left:15%;
+            z-index:1;
+        }
+        .overlay3 {
+            position:absolute;
+            top:30%;
+          left:40%;
+            z-index:1;
+        }
         
