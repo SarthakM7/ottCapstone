@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SafePipe } from '../safe.pipe';
 
 
 
@@ -27,7 +28,8 @@ const routes: Routes = [
     MovieComponent,
     AboutComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,

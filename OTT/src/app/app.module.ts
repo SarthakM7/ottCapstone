@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { SafePipe } from './safe.pipe';
 
 
 
@@ -18,7 +19,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
   declarations: [
     AppComponent,
     PaymentComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SafePipe
     
   ],
   imports: [

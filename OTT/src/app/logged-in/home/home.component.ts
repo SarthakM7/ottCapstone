@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   index = 0;
   selectedLang = '';
   selectedGenre = '';
-
   users:any;
 
 
@@ -49,6 +48,10 @@ export class HomeComponent implements OnInit {
 
   onSelectedGenre(value: string): void {
     this.selectedGenre = value;
+  }
+  disco( id: any) {
+    console.log("inside disco"+id);
+    this.allServices.tempo=id;
   }
 
   hindiBest(): void {

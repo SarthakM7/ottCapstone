@@ -1,12 +1,15 @@
 <app-navbar></app-navbar>
 <br>
 <div class="container">
-    <h1>Movie Name: </h1>
-    <h3>Genre:</h3>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ihCaohTJYCo?autoplay=1&mute=1&controls=1&rel=0" 
+    <h1>Movie Name: {{here.moviename}}</h1>
+    <h3>Genre: {{here.genre}}</h3>
+    ksadjsak<br>
+    <!-- {{here.tralier}} -->
+    {{safeSrc}}
+    aijdaskda
+<iframe width="560" height="315" [src]=" safeSrc" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<!-- hewllo {{here.moviename}} sodjas -->
 </div>
 <app-footer></app-footer>
