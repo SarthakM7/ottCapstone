@@ -28,10 +28,15 @@ export class ProfileComponent implements OnInit {
   user:any=""
   fname:any= ""
   lname:any= ""
+<<<<<<< HEAD
   email:any= ""
   num:any=""
   acctype:any=""
   ID: any = this.sarv.userLoggedinID;
+=======
+  acctype:any=""
+  
+>>>>>>> parent of 921f8e3 (commented)
   makenow()
   {
     this.sarv.getuser(3).subscribe(data => {
@@ -42,8 +47,11 @@ export class ProfileComponent implements OnInit {
       })
       this.fname=this.user.fname;
       this.lname=this.user.lname;
+<<<<<<< HEAD
       this.email=this.user.email;
       this.num=this.user.mobile;
+=======
+>>>>>>> parent of 921f8e3 (commented)
   }
 }
 
