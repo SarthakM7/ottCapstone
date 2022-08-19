@@ -1,34 +1,48 @@
-<form   [formGroup]="signupForm">
-    <!-- #addForm="ngForm" (ngSubmit)="onAddUser(addForm)"-->
-    <br><br>
+<div class="background">
+    <div class="blur">
 
-    First name:<input type="text" name="first_name" formControlName="fname">
-    <br><br>
-    Last name:<input type="text" name="last_name" formControlName="lname">
+        <div class="d-flex justify-content-center">
 
-    <br><br>
+            <div class="card w-25 bg-transparent my-5">
+                <form [formGroup]='signupForm'>
+                    <div class="card-header">
+                        <h3 class="my-2">Sign up</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title my-2">First name</h5>
+                        <input type="text" formControlName="fname" placeholder="Enter your First name" class="form-control my-2">
+                        <div *ngIf="signupForm.get('fname')?.invalid && (signupForm.get('fname')?.touched || signupForm.get('fname')?.dirty)" class="text-white">Your first name must only contain letters</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title my-2">Last name</h5>
+                        <input type="text" formControlName="lname" placeholder="Enter your Last name" class="form-control my-2">
+                        <div *ngIf="signupForm.get('lname')?.invalid && (signupForm.get('lname')?.touched || signupForm.get('lname')?.dirty)" class="text-white">Your last name must only contain letters</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title my-2">Phone number</h5>
+                        <input type="text" formControlName="mobile" placeholder="Enter your phone number" class="form-control my-2">
+                        <div *ngIf="signupForm.get('mobile')?.invalid && (signupForm.get('mobile')?.touched || signupForm.get('mobile')?.dirty)" class="text-white">Please enter a valid mobile number</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title my-2">Email</h5>
+                        <input type="email" formControlName="email" email placeholder="Enter your Email Address" class="form-control my-2">
+                        <div *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.touched || signupForm.get('email')?.dirty)" class="text-white">Please enter a valid Email Address</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title my-2">Password</h5>
+                        <input type="text" formControlName="password" placeholder="Enter a strong password" class="form-control my-2">
+                        <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)" class="text-white">Password must contain at least 1 Uppercase, Lowercase, </div>
+                        <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)" class="text-white">number and special character</div>
+                    </div>
+                    <div class="card-footer text-muted">
 
-    Mobile:<input type="tel" name="mobile" formControlName="mobile">
+                        <button class="btn btn-primary text-black" [disabled]="!signupForm.valid" (click)="AddUser()">Sign up</button>
+                    </div>
+                </form>
+                <button class="btn"><a routerLink="../" class="text-black">Existing User? Log In</a></button>
+            </div>
 
-    <br><br>
 
-    Email:<input type="email" name="email" formControlName="email">
-
-    <br><br>
-
-    <label for="pwd">Password:</label>
-    <input type="password" id="pwd" name="pwd" formControlName="password">
-
-    <br><br>
-
-    <label for="cpwd">Confirm Password:</label>
-    <input type="password" id="cpwd" name="cpwd">
-
-    <br><br>
-
-    <input type="checkbox">I accept the terms and conditions
-
-    <br><br>
-
-    <input type="submit" (click) ="AddUser()" value="Sign Up">
-</form>
+        </div>
+    </div>
+</div>

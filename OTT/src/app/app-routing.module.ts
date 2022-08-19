@@ -13,7 +13,7 @@ import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
 //  { path: '', redirectTo: 'login/LoginComponent', pathMatch: 'full'},
-    {path: "Auth",  loadChildren: () => import("./login/login.module").then(m => m.LoginModule)
+    {path: "",  loadChildren: () => import("./login/login.module").then(m => m.LoginModule)
     //Lazy loading for login module 
   },
   {path: "in",  loadChildren: () => import("./logged-in/logged-in.module").then(m => m.LoggedInModule)},
@@ -21,13 +21,6 @@ const routes: Routes = [
   {
     path: 'pay', component: PaymentComponent
   },
-  {
-    path: 'movie', component: MovieComponent //Movie Component can be child of Home and Child activation as well
-  },
- 
-  {path:'profile',component:ProfileComponent},
-
-  {path: 'about', component: AboutComponent},
   
   {path: '**', component:NotfoundComponent}
 ]
