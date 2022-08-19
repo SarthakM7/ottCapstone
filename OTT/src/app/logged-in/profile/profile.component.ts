@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AllServiceService } from 'src/app/all-service.service';
 import { Users } from 'src/app/users';
 
@@ -11,10 +13,11 @@ import { Users } from 'src/app/users';
 export class ProfileComponent implements OnInit {
   User:Users[]=[];
   public profileForm! : FormGroup;
-  constructor(public sarv:AllServiceService, public formbuilder:FormBuilder) { }
+  constructor(public sarv:AllServiceService, public formbuilder:FormBuilder, public route:Router) { }
 
   ngOnInit(): void {
     console.log(this.sarv.userLoggedinID);
+
     this.profileForm = this.formbuilder.group({
       fname: ['', [Validators.required, Validators.pattern("^[a-zA-Z]+$")]],
       lname: ['', [Validators.required, Validators.pattern("^[a-zA-Z]+$")]],
@@ -26,26 +29,35 @@ export class ProfileComponent implements OnInit {
     this.makenow();
   }
   user:any=""
-  fname:any= ""
-  lname:any= ""
-  email:any= ""
-  num:any=""
+  
   acctype:any=""
   ID: any = this.sarv.userLoggedinID;
   
 
   makenow()
   {
-    this.sarv.getuser(3).subscribe(data => {
+    this.sarv.getuser(this.sarv.userLoggedinID).subscribe(data => {
       this.user = JSON.parse(JSON.stringify(data));
     },
       error => {
         console.log(error);
       })
-      this.fname=this.user.fname;
-      this.lname=this.user.lname;
-      this.email=this.user.email;
-      this.num=this.user.mobile;
+  }
+
+  public updateUserDetails(): void{
+    this.sarv.updateUser(this.profileForm.value).subscribe(
+      data => {
+        alert("Data sent successfully")
+        console.log(this.profileForm.value);
+        this.profileForm.reset();
+        //this.toggleDisplaySuccess();
+        this.route.navigate([''])
+      },
+      (error: HttpErrorResponse)=>{
+        alert(error.message);
+        this.profileForm.reset();
+      }
+    )
   }
 }
 

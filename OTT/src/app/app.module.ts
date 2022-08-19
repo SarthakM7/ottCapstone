@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './notfound/notfound.component';
-
+import { AllServiceService } from './all-service.service';
 
 
 
@@ -18,7 +18,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
   declarations: [
     AppComponent,
     PaymentComponent,
-    NotfoundComponent
+    NotfoundComponent,
     
   ],
   imports: [
@@ -30,7 +30,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AllServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

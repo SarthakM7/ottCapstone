@@ -4,36 +4,36 @@
 
         <div class="d-flex justify-content-center">
 
-            <div class="card w-25 bg-transparent my-5">
-                <!-- <form [formGroup]='profileForm'> -->
-                <form>
+            <div class="card w-25 bg-dark my-5">
+                
+                <form [formGroup] ='profileForm'>
                     <div class="card-header">
-                        <h3 class="my-2">Profile</h3>
+                        <h3 class="my-2 text-white" >Profile</h3>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title my-2">First name</h5>
+                        <h5 class="card-title my-2 text-white">First name</h5>
                         <input type="text" formControlName="fname" placeholder="{{user.fname}}" class="form-control my-2">
-                        <div *ngIf="profileForm.get('fname')?.invalid && (signupForm.get('fname')?.touched || signupForm.get('fname')?.dirty)" class="text-white">Your first name must only contain letters</div>
+                        <div *ngIf="profileForm.get('fname')?.invalid && (profileForm.get('fname')?.touched || profileForm.get('fname')?.dirty)" class="text-white">Your first name must only contain letters</div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title my-2">Last name</h5>
+                        <h5 class="card-title my-2 text-white">Last name</h5>
                         <input type="text" formControlName="lname" placeholder="{{user.lname}}" class="form-control my-2">
-                        <div *ngIf="signupForm.get('lname')?.invalid && (signupForm.get('lname')?.touched || signupForm.get('lname')?.dirty)" class="text-white">Your last name must only contain letters</div>
+                        <div *ngIf="profileForm.get('lname')?.invalid && (profileForm.get('lname')?.touched || profileForm.get('lname')?.dirty)" class="text-white">Your last name must only contain letters</div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title my-2">Phone number</h5>
-                        <input type="text" formControlName="mobile" placeholder="{{user.num}}" class="form-control my-2">
-                        <div *ngIf="signupForm.get('mobile')?.invalid && (signupForm.get('mobile')?.touched || signupForm.get('mobile')?.dirty)" class="text-white">Please enter a valid mobile number</div>
+                        <h5 class="card-title my-2 text-white">Phone number</h5>
+                        <input type="text" formControlName="mobile" placeholder="{{user.mobile}}" class="form-control my-2">
+                        <div *ngIf="profileForm.get('mobile')?.invalid && (profileForm.get('mobile')?.touched || profileForm.get('mobile')?.dirty)" class="text-white">Please enter a valid mobile number</div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title my-2">Email</h5>
+                        <h5 class="card-title my-2 text-white">Email</h5>
                         <input type="email" formControlName="email" email placeholder="{{user.email}}" class="form-control my-2">
-                        <div *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.touched || signupForm.get('email')?.dirty)" class="text-white">Please enter a valid Email Address</div>
+                        <div *ngIf="profileForm.get('email')?.invalid && (profileForm.get('email')?.touched || profileForm.get('email')?.dirty)" class="text-white">Please enter a valid Email Address</div>
                     </div>
                     
                     <div class="card-footer text-muted">
 
-                        <button class="btn btn-primary text-black" >Save Changes</button>
+                        <button class="btn btn-primary text-black" (click)="updateUserDetails()">Save Changes</button>
                     </div>
                 </form>
                 <button class="btn"><a routerLink="../" class="text-black">No changes? Head back</a></button>

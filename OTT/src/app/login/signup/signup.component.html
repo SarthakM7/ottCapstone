@@ -35,7 +35,7 @@
                         <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)" class="text-white">number and special character</div>
                     </div>
                     <div class="card-footer text-muted">
-
+                        <div [hidden]="isShowSent"><span class="text-success">User created successfully!</span></div>
                         <button class="btn btn-primary text-light" [disabled]="!signupForm.valid" (click)="AddUser()">Sign up</button>
                     </div>
                 </form>
