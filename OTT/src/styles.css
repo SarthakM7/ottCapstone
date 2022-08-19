@@ -11405,12 +11405,12 @@ p {
   }
 }
 header.masthead {
-  padding-top: 4.5rem;
-  padding-bottom: 6rem;
+  /* padding-top: 4.5rem;
+  padding-bottom: 6rem; */
   text-align: center;
   color: #fff;
   
-  background-image: url("https://wallpapercave.com/wp/wp10077499.jpg");
+  /* background-image: url("https://wallpapercave.com/wp/wp10077499.jpg"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
