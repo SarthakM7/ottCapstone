@@ -14,9 +14,9 @@ export class ProfileComponent implements OnInit {
     this.makenow();
   }
   user:any=""
-  fname:any= ""
-  lname:any= ""
-  acctype:any=""
+  // fname:any= ""
+  // lname:any= ""
+  // acctype:any=""
   
   makenow()
   {
@@ -29,8 +29,8 @@ export class ProfileComponent implements OnInit {
         console.log("hererer")
         console.log(error);
       })
-      this.fname=this.user.fname;
-      this.lname=this.user.lname;
+      // this.fname=this.user.fname;
+      // this.lname=this.user.lname;
   }
 }
 
