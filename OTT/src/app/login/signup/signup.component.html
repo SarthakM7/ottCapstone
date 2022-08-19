@@ -30,7 +30,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-light">Password</h5>
-                        <input type="text" formControlName="password" placeholder="Enter a strong password" class="form-control my-2">
+                        <input type="password" formControlName="password" placeholder="Enter a strong password" class="form-control my-2">
                         <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)" class="text-white">Password must contain at least 1 Uppercase, Lowercase, </div>
                         <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)" class="text-white">number and special character</div>
                     </div>

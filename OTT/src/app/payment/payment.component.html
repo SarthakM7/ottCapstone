@@ -16,22 +16,46 @@
 		</div>
 
 		<div class="centre-content">
-			<h1 class="price">Now only at ₹119 per month<span>/-</span></h1>
+			<h1 class="price">Premium</h1>
 			<p class="course">
-				Amazon Prime
+				Amazon Prime Premium now at 1950/-
 			</p>
 		</div>
 
 		<div class="last-content">
-			<button type="button" class="pay-now-btn">
+			<button [disabled]=" hide_cd" type="button" class="pay-now-btn" (click)="hide_nb=!hide_nb">
 				Pay with Netbanking
+			</button>
+
+			<button [disabled]=" hide_nb" type="button" class="pay-now-btn" (click)="hide_cd=!hide_cd">
+				Pay with Credit/Debit Card
 			</button>
 
 			<!-- <button type="button" class="pay-now-btn">
 		Netbanking options
 		</button> -->
 		</div>
-		<form [formGroup]="payForm">
+
+		<ul *ngIf="hide_nb">
+			<br>
+			<input type="radio" id="Axis" name="bank" value="axis">
+			<label for="axis">Axis Bank</label><br>
+			<input type="radio" id="Hdfc" name="bank" value="hdfc">
+			<label for="hdfc">HDFC Bank</label><br>
+			<input type="radio" id="Icici" name="bank" value="icici">
+			<label for="icici">ICICI Bank</label><br>
+			<input type="radio" id="Kotak" name="bank" value="kotak">
+			<label for="kotak">Kotak</label><br>
+			<input type="radio" id="Sbi" name="bank" value="sbi">
+			<label for="sbi">HDFC Bank</label><br><br>
+
+			<button type="submit" class="submit-now-btn">
+				submit
+			</button>
+		</ul>
+
+		<form *ngIf="hide_cd" [formGroup]="payForm">
+			<br>
 			<div class="card-details">
 				<p>Pay using Credit/Debit card</p>
 				<br>
@@ -40,7 +64,7 @@
 					<label> Card Number </label>
 					<input formControlName="cn" type="text" class="card-number-field" placeholder="###-###-###" />
 					<div *ngIf="payForm.get('cn')?.invalid">
-						<h6>card number invalid</h6>
+						<p style="color: red;">card number invalid</p>
 					</div>
 				</div>
 				<br />
@@ -53,7 +77,7 @@
 					<label> CVV number </label>
 					<input type="text" formControlName="cvv" class="cvv-number-field" placeholder="xxx" id="cvv" />
 					<div *ngIf="payForm.get('cvv')?.invalid">
-						<h6>cvv invalid</h6>
+						<p style="color: red;">cvv invalid</p>
 					</div>
 				</div>
 				<br>
@@ -62,11 +86,11 @@
 					<input type="text" formControlName="name" class="card-name-field" placeholder="Enter your Name"
 						id="name" />
 					<div *ngIf="payForm.get('name')?.invalid">
-						<h6>name invalid</h6>
+						<p style="color: red;">name invalid</p>
 					</div>
 				</div>
 				<br>
-				<button type="submit" class="submit-now-btn">
+				<button type="submit" class="submit-now-btn" (click)="UpdateUser()">
 					submit
 				</button>
 			</div>

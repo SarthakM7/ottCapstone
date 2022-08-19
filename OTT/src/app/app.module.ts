@@ -14,13 +14,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     PaymentComponent,
-    NotfoundComponent,
-    
+    NotfoundComponent
     
   ],
   imports: [

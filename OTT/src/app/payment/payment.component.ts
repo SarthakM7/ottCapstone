@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AllServiceService } from '../all-service.service';
 
 // import { UserPay } from '../total.service';
 
@@ -10,21 +12,22 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors,
 })
 export class PaymentComponent {
   title = 'ott';
+  hide_cd: boolean = false;
+  hide_nb: boolean = false;
   // user: UserPay = {cn:0, cvv:0, name:""}
-
-  constructor() { }
+  public payForm! : FormGroup;
+  constructor(private allServices: AllServiceService) { }
 
   ngOnInit(): void {
-  }
-  payForm = new FormGroup
+    this.payForm = new FormGroup
     ({
       cn: new FormControl('', [Validators.required,this.validatecn]),
       cvv: new FormControl('', [Validators.required,this.validatecvv]),
       name: new FormControl('', [Validators.required,this.validatename]),
-      ed: new FormControl('', [Validators.required,this.validatename])
+      ed: new FormControl('', [Validators.required,this.validatename]),
+      accType: new FormControl('0')
     });
-
-    
+  }
     
     validatecn(control:AbstractControl):ValidationErrors | null{
       // const reCn = /^[A-Za-z0-9]+$/
@@ -64,5 +67,20 @@ export class PaymentComponent {
       }
       else
       return null;
+    }
+
+    public UpdateUser(): void{
+      this.payForm.value.accType=1;
+      this.allServices.updateUser(this.payForm.value).subscribe(
+        data => {
+          alert("Data updated successfully")
+          console.log(this.payForm.value);
+          this.payForm.reset();
+        },
+        (error: HttpErrorResponse)=>{
+          alert(error.message);
+          this.payForm.reset();
+        }
+      )
     }
 }

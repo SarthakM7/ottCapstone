@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -59,6 +60,13 @@ public class megaController {
 	@PostMapping("users")
 	@ResponseBody
 	public users addUser(@RequestBody users user) {
+		repo.save(user);
+		return user;
+	}
+	
+	@PutMapping(path="/users", consumes= {"applications/json"})
+	public users updateuser( @RequestBody users user)
+	{
 		repo.save(user);
 		return user;
 	}

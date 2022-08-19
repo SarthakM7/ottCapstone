@@ -33,5 +33,8 @@ export class AllServiceService {
   addUser(user: Users): Observable<any> {
     return this.http.post(`${baseUrl}/users`, user);
   }
+  updateUser(user: Users): Observable<any> {
+    return this.http.put(`${baseUrl}/users`, user);
+  }
   tempo=0;
 }

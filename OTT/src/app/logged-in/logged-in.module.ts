@@ -12,7 +12,6 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
-
 const routes: Routes = [
   {path:"",component: HomeComponent},
   {path: 'movie', component: MovieComponent}, //Movie Component can be child of Home and Child activation as well
@@ -28,8 +27,7 @@ const routes: Routes = [
     MovieComponent,
     AboutComponent,
     NavbarComponent,
-    FooterComponent,
-    
+    FooterComponent
   ],
   imports: [
     CommonModule,
