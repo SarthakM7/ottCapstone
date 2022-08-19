@@ -1,26 +1,25 @@
 <div class="background">
-    <div class="blur">
-
+    
         <div class="d-flex justify-content-center">
 
-            <div class="card w-25 bg-transparent my-5">
+            <div class="card w-25 bg-dark my-5">
                 <form [formGroup]='loginForm'>
                     <div class="card-header">
-                        <h3 class="my-2">Log In</h3>
+                        <h3 class="my-2 text-light">Log In</h3>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title my-2">Email</h5>
+                        <h5 class="card-light text-light">Email</h5>
                         <input type="email" formControlName="email" email placeholder="Enter your email address" class="form-control my-2" >
-                        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)" class="text-white">Please enter a valid email address</div>
+                        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)" class="text-light">Please enter a valid email address</div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title my-2">Password</h5>
+                        <h5 class="card-title text-light">Password</h5>
                         <input type="password" formControlName="password" placeholder="Enter your password" class="form-control my-2" >
-                        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)" class="text-white">Please enter a valid password</div>
+                        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)" class="text-light">Please enter a valid password</div>
                     </div>
                     <div class="card-footer text-muted">
                         
-                        <button class="btn btn-primary text-black" [disabled]="!loginForm.valid" (click)="validateCheck()">Log in</button>
+                        <button class="btn btn-primary text-light" [disabled]="!loginForm.valid" (click)="validateCheck()">Log in</button>
                     </div>
                 </form>
                 <button class="btn"><a routerLink="../signup" class="text-black" >Not a user? Sign up</a></button>
@@ -29,4 +28,3 @@
 
         </div>
     </div>
-</div>
