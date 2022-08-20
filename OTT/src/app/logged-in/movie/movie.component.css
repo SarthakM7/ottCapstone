@@ -6,7 +6,6 @@ iframe{
     border-radius: 10px;
 }
 body{
-
     font-family: 'Quicksand', sans-serif;
     background: #eee;
   }
@@ -39,12 +38,12 @@ body{
   }
   
   .heading{
-  
+        font-size: 20px;
         font-weight: 500 !important;
   }
   
   .subheadings{
-        font-size: 12px;
+        font-size: 16px;
       color: #9c27b0;
     }
   

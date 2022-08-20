@@ -22,7 +22,7 @@
   <ng-template carouselSlide *ngFor="let movie of movies">
     <div class="damnation" >
       <div class="slide mx-2" >
-      <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+      <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
       <div class="carousel-caption d-none d-md-block">
         <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
       </div>
@@ -47,7 +47,7 @@
     <ng-template carouselSlide *ngFor="let movie of hindiMovies">
       <div class="damnation" >
         <div class="slide mx-2" >
-        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+        <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
@@ -65,7 +65,7 @@
     <ng-template carouselSlide *ngFor="let movie of englishMovies">
       <div class="damnation" (click)="disco(movie.id)">
         <div class="slide mx-2" >
-        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+        <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
@@ -82,7 +82,7 @@
     <ng-template carouselSlide *ngFor="let movie of teluguMovies">
       <div class="damnation" (click)="disco(movie.id)">
         <div class="slide mx-2" >
-        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+        <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
@@ -126,7 +126,7 @@
     <ng-template carouselSlide *ngFor="let movie of horrorMovies">
       <div class="damnation" (click)="disco(movie.id)">
         <div class="slide mx-2" >
-        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+        <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
@@ -145,7 +145,7 @@
     <ng-template carouselSlide *ngFor="let movie of comedyMovies">
       <div class="damnation" (click)="disco(movie.id)">
         <div class="slide mx-2" >
-        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+        <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
@@ -163,7 +163,7 @@
     <ng-template carouselSlide *ngFor="let movie of romanceMovies">
       <div class="damnation" (click)="disco(movie.id)">
         <div class="slide mx-2" >
-        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+        <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
@@ -181,7 +181,7 @@
     <ng-template carouselSlide *ngFor="let movie of dramaMovies">
       <div class="damnation" (click)="disco(movie.id)">
         <div class="slide mx-2" >
-        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+        <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
@@ -199,7 +199,7 @@
     <ng-template carouselSlide *ngFor="let movie of thrillerMovies">
       <div class="damnation" >
         <div class="slide mx-2" >
-        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
+        <a class="tile reveal"><img src="../../../assets/posters/{{movie.id}}.jpg" routerLink = "movies/{{movie.id}}" (click)="disco(movie.id)"></a>
         <div class="carousel-caption d-none d-md-block">
           <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
