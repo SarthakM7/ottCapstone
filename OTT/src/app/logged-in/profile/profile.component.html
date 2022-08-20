@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="background">
+<div class="background"><br>
     
 
         <div class="d-flex justify-content-center">
@@ -11,7 +11,7 @@
                         <h3 class="my-2 text-white" >Profile</h3>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title my-2">First name</h5>
+                        <h5 class="card-title my-2 text-white">First name</h5>
                         <input type="text" formControlName="fname" placeholder="{{user.fname}}" class="form-control my-2">
                         <div *ngIf="profileForm.get('fname')?.invalid && (profileForm.get('fname')?.touched || profileForm.get('fname')?.dirty)" class="text-white">Your first name must only contain letters</div>
                     </div>
@@ -36,7 +36,7 @@
                         <button class="btn btn-primary text-black" (click)="updateUserDetails()">Save Changes</button>
                     </div>
                 </form>
-                <button class="btn"><a routerLink="../" class="text-black">No changes? Head back</a></button>
+                <button class="btn"><a routerLink="../" class="text-white">No changes? Head back</a></button>
             </div>
 
 

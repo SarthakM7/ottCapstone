@@ -1,7 +1,14 @@
 .background {
-    background-color: black;
+  background-image: linear-gradient(black, white);
   }
-
+.card{
+  border-radius: 10px;
+  background-image: url("https://i.redd.it/ttdzsj1bynl01.jpg");
+  object-fit: contain;
+}
+.text-white{
+  text-shadow: 4px 4px 8px rgb(119, 54, 184);
+}
  
 
   input.ng-valid{
