@@ -6,35 +6,31 @@
     </select>
 </form> -->
 <app-navbar></app-navbar>
-<video muted autoplay>
+<video muted autoplay controls>
   <source src="assets/1.mp4" type="video/mp4"> 
 </video>
-<!-- Masthead-->
-<header class="masthead">
+
   <div class="container">
       <img src="assets/logo_White-removebg-preview1.png" class="overlay1" alt="Branding-Logo" style="padding-bottom: 10px;">
       
-      <div class="masthead-subheading overlay2">Get <strong>Classic, Legendary and Evergreen</strong> Movies right here.</div>
+      <div class="heading overlay2"><h2>Get <strong>Classic, Legendary and Evergreen</strong> Movies right here.</h2></div>
   </div>
-</header>
-
+<div class="container-fluid">
+<br>
 <h1>All Movies</h1>
 <owl-carousel-o [options]="customOptions">
   <ng-template carouselSlide *ngFor="let movie of movies">
-    <div class="damnation">
-    <div class="slide mx-2">
-      <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+    <div class="damnation" (click)="disco(movie.id)">
+      <div class="slide mx-2" >
+      <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
       <div class="carousel-caption d-none d-md-block">
-        <h5>{{movie.moviename}}</h5>
-        <!-- <a routerLink = "movies/{{movie.id}}"><h5>{{movie.moviename}}</h5></a> -->
+        <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
       </div>
     </div>
   </div>
   </ng-template>
 </owl-carousel-o>
 <br>
-
-
 <div class="col">
   <h3>Filter by language:</h3>
   <select #lang (change)="onSelected(lang.value)">
@@ -43,18 +39,20 @@
     <option>Hindi</option>
     <option>Telugu</option>
   </select>
-</div>
+</div><br>
 
 <div *ngIf="selectedLang ==='Hindi'">
   <h1>Hindi Movies</h1>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of hindiMovies">
-      <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+      <div class="damnation" (click)="disco(movie.id)">
+        <div class="slide mx-2" >
+        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{movie.moviename}}</h5>
+          <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
       </div>
+    </div>
     </ng-template>
   </owl-carousel-o>
   <br>
@@ -65,12 +63,14 @@
   <h1>Enlgish Movies</h1>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of englishMovies">
-      <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+      <div class="damnation" (click)="disco(movie.id)">
+        <div class="slide mx-2" >
+        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{movie.moviename}}</h5>
+          <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
       </div>
+    </div>
     </ng-template>
   </owl-carousel-o>
   <br>
@@ -80,12 +80,14 @@
   <h1>Telugu Movies</h1>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of teluguMovies">
-      <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+      <div class="damnation" (click)="disco(movie.id)">
+        <div class="slide mx-2" >
+        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{movie.moviename}}</h5>
+          <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
       </div>
+    </div>
     </ng-template>
 
   </owl-carousel-o>
@@ -122,12 +124,14 @@
   <h1>Horror Movies</h1>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of horrorMovies">
-      <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+      <div class="damnation" (click)="disco(movie.id)">
+        <div class="slide mx-2" >
+        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{movie.moviename}}</h5>
+          <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
       </div>
+    </div>
     </ng-template>
 
   </owl-carousel-o>
@@ -139,12 +143,14 @@
   <h1>Comedy Movies</h1>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of comedyMovies">
-      <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+      <div class="damnation" (click)="disco(movie.id)">
+        <div class="slide mx-2" >
+        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{movie.moviename}}</h5>
+          <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
       </div>
+    </div>
     </ng-template>
 
   </owl-carousel-o>
@@ -155,12 +161,14 @@
   <h1>Romantic Movies</h1>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of romanceMovies">
-      <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+      <div class="damnation" (click)="disco(movie.id)">
+        <div class="slide mx-2" >
+        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{movie.moviename}}</h5>.
+          <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
       </div>
+    </div>
     </ng-template>
 
   </owl-carousel-o>
@@ -171,31 +179,37 @@
   <h1>Drama Movies</h1>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of dramaMovies">
-      <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+      <div class="damnation" (click)="disco(movie.id)">
+        <div class="slide mx-2" >
+        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{movie.moviename}}</h5>
+          <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
       </div>
+    </div>
     </ng-template>
 
   </owl-carousel-o>
-  <br>
+  
 </div>
 
 <div *ngIf="selectedGenre ==='Thriller'">
   <h1>Thriller Movies</h1>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of thrillerMovies">
-      <div class="slide mx-2">
-        <img src="../../../assets/Images/Test-logo.jpg" class="rounded-5" alt="img 1" (click)="disco(movie.id)" routerLink = "movies/{{movie.id}}">
+      <div class="damnation" (click)="disco(movie.id)">
+        <div class="slide mx-2" >
+        <a class="tile reveal"><img src="../../../assets/Images/Test-logo.jpg" routerLink = "movies/{{movie.id}}"></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{movie.moviename}}</h5>
+          <h5 style="padding-bottom: 5px;">{{movie.moviename}}<br>{{movie.genre}}<br>{{movie.movielang}}<br>PG {{movie.pgrating}}</h5>
         </div>
       </div>
+    </div>
     </ng-template>
 
   </owl-carousel-o>
   <br>
 </div>
+
+<br></div>
 <app-footer></app-footer>

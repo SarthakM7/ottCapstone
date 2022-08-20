@@ -1,4 +1,5 @@
 
+        @import url("https://fonts.googleapis.com/css?family=Aboreto");
         img {
             height: 280px;
         }
@@ -21,23 +22,62 @@
         .overlay2 {
             position:absolute;
             top:23%;
-          left:15%;
+            left:15%;
             z-index:1;
         }
         .overlay3 {
             position:absolute;
             top:30%;
-          left:40%;
+            left:40%;
             z-index:1;
         }
-        /* /* .damnation{
-          width:200px;
-          transition: width 4s;
-        } 
-        .damnation :hover{
-          width:200px;
-          padding: 10px;
-          transition: width 1s;
-        } */
         
-        
+        .heading{
+          color: aliceblue;
+        }
+        .damnation{
+          display: flex;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          border-radius: 0px;   
+        }
+        h5{
+          font-family: Aboreto;
+          font-size: 14px;
+        }
+        .tile {
+            position: relative;
+            display: block;
+            flex: 1 1 0px;
+            transition: transform 500ms;
+            border-radius: 0px;
+          }
+          
+          .tile img {
+            display: block;
+            max-width: 100%;
+          }
+          .damnation .tile:focus,
+          .damnation .tile:hover{
+            transform: scale(1.5);
+            z-index: 1;
+            
+            
+            
+          }
+          .reveal {
+            filter:blur(2px);
+          }
+          
+          .reveal:hover{
+              -webkit-animation: 0.25s linear forwards reveal;
+               -moz-animation: 0.25s linear forwards reveal;
+                 -o-animation: 0.25s linear forwards reveal;
+                    animation: 0.25s linear forwards reveal;
+          }
+          
+          @-webkit-keyframes reveal { from { filter:blur(3px); } to { filter:blur(0px); }  }
+             @-moz-keyframes reveal { from { filter:blur(3px); } to { filter:blur(0px); }  }
+               @-o-keyframes reveal { from { filter:blur(3px); } to { filter:blur(0px); }  }
+                  @keyframes reveal { from { filter:blur(3px); } to { filter:blur(0px); }  }
+          
