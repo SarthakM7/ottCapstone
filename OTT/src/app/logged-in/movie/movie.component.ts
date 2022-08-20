@@ -73,9 +73,8 @@ export class MovieComponent implements OnInit {
         console.log(error);
       })
   }
-  buy()
-  {
-    this._router.navigateByUrl("/pay")
+  buy(){
+    this._router.navigateByUrl("pay")
   }
 
 }

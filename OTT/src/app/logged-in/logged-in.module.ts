@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubscriptionComponent } from './subscription/subscription.component';
+import { NotmovieComponent } from './notmovie/notmovie.component';
 
 
 
@@ -18,8 +19,7 @@ const routes: Routes = [
   {path: 'movie', component: MovieComponent}, //Movie Component can be child of Home and Child activation as well
   {path:"movies/:id",component: MovieComponent},
   {path: 'about', component: AboutComponent},
-  {path:'profile',component:ProfileComponent},
-  {path: 'sub', component: SubscriptionComponent}
+  {path:'profile',component:ProfileComponent}
 ];
 
 
@@ -31,7 +31,8 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     ProfileComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
+    NotmovieComponent
   ],
   imports: [
     CommonModule,

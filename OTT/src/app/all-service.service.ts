@@ -11,7 +11,7 @@ const baseUrl = "http://localhost:8080"
 })
 export class AllServiceService {
   
-  userLoggedinID:number| undefined=0;
+  userLoggedinID:number| undefined=2;
   constructor(private http : HttpClient) { }
 
   getAllMovies(): Observable<any> {
