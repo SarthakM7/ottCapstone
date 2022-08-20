@@ -1,0 +1,11 @@
+.block :hover{
+    filter: invert(100%);
+    transition: 1s;
+}
+body{
+    background-color: black;
+}
+.select{
+border: 2px solid white;
+box-shadow: 10px 8px 40px 20px #0ff;
+}

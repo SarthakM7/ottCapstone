@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AllServiceService } from '../all-service.service';
+import { SubscriptionComponent } from './subscription/subscription.component';
 
 
 
@@ -19,6 +19,7 @@ const routes: Routes = [
   {path:"movies/:id",component: MovieComponent},
   {path: 'about', component: AboutComponent},
   {path:'profile',component:ProfileComponent},
+  {path: 'sub', component: SubscriptionComponent}
 ];
 
 
@@ -29,7 +30,8 @@ const routes: Routes = [
     AboutComponent,
     NavbarComponent,
     FooterComponent,
-    ProfileComponent
+    ProfileComponent,
+    SubscriptionComponent
   ],
   imports: [
     CommonModule,
