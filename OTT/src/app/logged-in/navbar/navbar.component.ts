@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AllServiceService } from 'src/app/all-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +9,11 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(public sarv: AllServiceService, public router: Router) { }
+  log: any;
+  ngOnInit(): void {this.log =this.sarv.userLoggedinID;  
+  //console.log(this.log)
+}
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event: any){
     //console.log($event);
@@ -25,5 +28,7 @@ export class NavbarComponent implements OnInit {
     navbarCollapsible.classList.add('navbar-shrink')
 }
   } 
-
+loggingOut(){
+  this.sarv.userLoggedinID=undefined;  
+}
 }

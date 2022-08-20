@@ -1,17 +1,14 @@
 <app-navbar></app-navbar>
 <br>
-<div class="container">
-    <h1>Movie Name: {{here.moviename}}</h1>
-    <h3>Genre: {{here.genre}}</h3>
-    <!-- ksadjsak<br>
-    {{here.tralier}}
-    {{safeSrc}}
-    aijdaskda -->
-    <!-- slim@shady.com -->
-    <div *ngIf="currUser.accType==1 || here.moviestatus==0 ; else mat_dekh">
-        <iframe width="560" height="315" [src]=" safeSrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+<div class="container"> <br>
+    <h1>{{here.moviename}}</h1>
+    
+    
+        <div *ngIf="currUser.accType==1 || here.moviestatus==0 ; else mat_dekh">
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin: 10px;"> Movie Information</button> 
+        <iframe width="1020" height="730" [src]=" safeSrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- hewllo {{here.moviename}} sodjas -->
+        
     </div>
     <ng-template #mat_dekh>
         <br><br>
@@ -19,5 +16,128 @@ encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
          <button (click)="buy()"><h4>buy premium?</h4></button>
     </ng-template>
 
+   
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Movie Informations</h5>
+        </div>
+        <div class="modal-body">
+          
+  
+              <div class="row g-0">
+  
+                  <div class="col-md-8 border-right">
+  
+                      <div class="status p-3">
+  
+                          <table class="table table-borderless">
+                            
+                            <tbody>
+                              <tr>
+                             
+                                <td>
+                                    <div class="d-flex flex-column">
+  
+                                      <span class="heading d-block">Movie Name</span>
+                                      <span class="subheadings">{{here.moviename}}</span>
+                                        
+  
+                                    </div>
+                                </td>
+                                <td>
+                                     <div class="d-flex flex-column">
+  
+                                      <span class="heading d-block">PG Rating</span>
+                                      <span class="subheadings">{{here.pgrating}}</span>
+                                        
+  
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex flex-column">
+  
+                                      <span class="heading d-block">Status</span>
+                                      <div *ngIf="here.moviestatus==true; then free else prime"></div>
+                                      <ng-template #free><span class="subheadings"><i class="dots"></i> Free</span></ng-template>
+                                      <ng-template #prime><span class="subheadings"><i class="dots"></i> Premium</span></ng-template>
+                                        
+  
+                                    </div>
+                                </td>
+                              </tr>
+                              <tr>
+                               
+                                <td>
+                                    <div class="d-flex flex-column">
+  
+                                      <span class="heading d-block">Movie Genre</span>
+                                      <span class="subheadings">{{here.genre}}</span>
+                                        
+  
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex flex-column">
+  
+                                      <span class="heading d-block">Movie Language</span>
+                                      <span class="subheadings">{{here.movielang}}</span>
+                                        
+  
+                                    </div>
+                                </td>
+                                <td>                                   
+  
+                                </td>
+                              </tr>
+                              <tr>
+                                 <td colspan="3">
+                                     <div class="d-flex flex-column">
+                                      <span class="heading d-block">Movie Synopsis</span>
+                                      <span class="subheadings">{{here.info}}</span>
+                                    </div>
+                                 </td>
+                               
+                              </tr>
+                            </tbody>
+                          </table>
+  
+                         
+                          
+                      </div>
+  
+  
+                      
+                      
+                  </div>
+                  <div class="col-md-4">
+  
+                      <div class="p-2 text-center">
+  
+                          <div class="profile">
+  
+                              <img src="" width="200px" height="400px" class="img-thumbnail">
+  
+                          </div>
+                          
+                      </div>
+                      
+                  </div>
+                  
+  
+  
+              </div>
+  
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Thank You</button>
+              </div>
+  
+        </div>
+     
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>
