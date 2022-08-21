@@ -80,8 +80,8 @@ export class LoginComponent implements OnInit {
       this.loginForm.reset();
       flag=false;
       this.ID=i;
-      this.retrieveIdUsers(i); 
-      this.user =[] 
+      this.retrieveIdUsers(i);  
+      this.user=[];
       this.toggleDisplaySuccess()
     }
     else{
