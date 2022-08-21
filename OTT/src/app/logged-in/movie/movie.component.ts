@@ -13,14 +13,15 @@ export class MovieComponent implements OnInit {
   here:any;
   users:any;
   safeSrc: any; 
-  currUser:any
+  currUser:any;
+  ID! : number;
   constructor(private allServices: AllServiceService, private router: Router,private sanitizer: DomSanitizer, private _router: Router) { }
 
   ngOnInit(): void {
     this.retrieveAllMovies();
     this.retrieveIdMovies(this.allServices.tempo);
     this.retrieveAllUsers();
-    this.retrieveIdUsers(this.allServices.userLoggedinID);
+    
     
   }
 
@@ -39,14 +40,8 @@ export class MovieComponent implements OnInit {
     this.allServices.getmovie(id).subscribe(data => {
       console.log("inside retidmovie"+id);
       this.here = JSON.parse(JSON.stringify(data));
-      // console.log(this.movies);
-      // console.log("inside movie trailer:  "+this.here.tralier);
-      // console.log("inside movie"+this.here.moviename);
-      // console.log("safe?");
     this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.here.tralier);
-    // console.log("safe: "+this.safeSrc);
-    // console.log("end");
-    // console.log("usre id"+this.allServices.userLoggedinID)
+    
     },
       error => {
         console.log(error);
@@ -54,14 +49,28 @@ export class MovieComponent implements OnInit {
 
   }
 
-  retrieveAllUsers(): void {
-    this.allServices.getAllUsers().subscribe(data => {
+  retrieveAllUsers():void{
+    this.allServices.getAllUsers().subscribe(data =>{
       this.users = JSON.parse(JSON.stringify(data));
-      console.log(this.movies);
+      this.getUser();
+      this.retrieveIdUsers(this.ID)
     },
-      error => {
+      error=>{
         console.log(error);
       })
+  }
+  
+
+  
+  getUser(){
+    let i=0
+    for(i;i<this.users.length;i++){
+      if(this.users[i].status ===true){
+        console.log("Inside Get User")
+        this.ID=i;
+        console.log(this.ID)
+      }
+    }
   }
 
   retrieveIdUsers(id: any): void {
@@ -74,7 +83,7 @@ export class MovieComponent implements OnInit {
       })
   }
   buy(){
-    this._router.navigateByUrl("pay")
+    this._router.navigateByUrl("payment")
   }
 
 }

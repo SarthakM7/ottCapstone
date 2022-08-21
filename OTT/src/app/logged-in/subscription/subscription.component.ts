@@ -10,13 +10,36 @@ import { AllServiceService } from 'src/app/all-service.service';
 export class SubscriptionComponent implements OnInit {
 currUser: any;
 disp= "";
+  users: any;
+  ID!: number;
   constructor( public sarv: AllServiceService, public router: Router) { }
 
   ngOnInit(): void {
-    this.retrieveIdUsers(this.sarv.userLoggedinID);
+    this.retrieveAllUsers();
     
   }
+  retrieveAllUsers():void{
+    this.sarv.getAllUsers().subscribe(data =>{
+      this.users = JSON.parse(JSON.stringify(data));
+      this.getUser();
+      this.retrieveIdUsers(this.ID)
+    },
+      error=>{
+        console.log(error);
+      })
+  }
 
+  
+  getUser(){
+    let i=0
+    for(i;i<this.users.length;i++){
+      if(this.users[i].status ===true){
+        console.log("Inside Get User")
+        this.ID=i;
+        console.log(this.ID)
+      }
+    }
+  }
   retrieveIdUsers(id: any): void {
     this.sarv.getuser(id+1).subscribe(data => {
       this.currUser = JSON.parse(JSON.stringify(data));

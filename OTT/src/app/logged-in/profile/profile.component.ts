@@ -77,7 +77,7 @@ export class ProfileComponent implements OnInit {
       this.User[0].lname = this.profileForm.value.lname;
       this.User[0].mobile = this.profileForm.value.mobile;
       this.User[0].email = this.profileForm.value.email;
-      this.User[0].password = this.profileForm.value.password;
+      //this.User[0].password = this.profileForm.value.password;
 
       this.sarv.updateUser(this.User[0],this.ID+1).subscribe(data => {
         alert("Data sent successfully")
