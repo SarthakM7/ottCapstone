@@ -1,7 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AllServiceService } from 'src/app/all-service.service';
+import { Users } from 'src/app/users';
 
 
 @Component({
@@ -10,8 +12,9 @@ import { AllServiceService } from 'src/app/all-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  ID!:number;
   users:any;
+  user:Users[]=[];
   flag=0;
 
   public loginForm!: FormGroup;
@@ -25,7 +28,6 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formbuilder.group({
       email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+.com$")]],
       password: ['', [Validators.required]],
-      active :Boolean,
      })
   }
 
@@ -38,6 +40,29 @@ export class LoginComponent implements OnInit {
         console.log(error);
       })
   }
+  retrieveIdUsers(id: any): void {
+    this.allServices.getuser(id+1).subscribe(data => {
+      this.user.push( JSON.parse(JSON.stringify(data)));
+      console.log(this.user);
+      this.setValues();
+    },
+      error => {
+        console.log(error);
+      })
+  }
+
+  setValues():void{
+  
+  this.user[0].status=1
+  this.allServices.updateUser(this.user[0],this.ID+1).subscribe(data=>{
+    
+  },
+  (error: HttpErrorResponse)=>{
+    alert(error.message);
+    this.loginForm.reset();
+  })
+  }
+
   validateCheck():void{
     
     let i=0;
@@ -45,27 +70,36 @@ export class LoginComponent implements OnInit {
 
     for(i=0; i<this.users.length;i++){
       if(this.loginForm.value.email==this.users[i].email && this.loginForm.value.password==this.users[i].password){
-        
         flag=true;
-        
         break;
       }
     }
 
     if(flag){
-      //window.alert("works");
+      
       this.loginForm.reset();
       flag=false;
-      this.allServices.userLoggedinID=i;
-      window.alert(this.allServices.userLoggedinID);
-      console.log("user no"+this.allServices.userLoggedinID); 
-      this.route.navigate(['/in']);
+      this.ID=i;
+      this.retrieveIdUsers(i);       
+      this.toggleDisplaySuccess()
     }
     else{
-    //window.alert("No user with this credentials");
+      this.toggleDisplayFailure()
       this.loginForm.reset();
     }
     
   }
+  isShowFail= true;
+  isShowSent = true;
 
+  public toggleDisplaySuccess() {
+    this.isShowSent = !this.isShowSent;  
+    setTimeout(()=>{this.route.navigate(['/in'])},2000);
+    ;
+  }
+
+  public toggleDisplayFailure() {
+    this.isShowFail = !this.isShowFail;  
+    
+  }
 }

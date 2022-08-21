@@ -7,4 +7,5 @@ export class Users {
     "email":string;
     "accType":number;
     "password":string ;
+    "status":number;
 }

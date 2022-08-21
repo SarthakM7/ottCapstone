@@ -14,6 +14,7 @@ export class PaymentComponent {
   title = 'ott';
   hide_cd: boolean = false;
   hide_nb: boolean = false;
+  ID! :number;
   // user: UserPay = {cn:0, cvv:0, name:""}
   public payForm! : FormGroup;
   constructor(private allServices: AllServiceService) { }
@@ -71,7 +72,7 @@ export class PaymentComponent {
 
     public UpdateUser(): void{
       this.payForm.value.accType=1;
-      this.allServices.updateUser(this.payForm.value).subscribe(
+      this.allServices.updateUser(this.payForm.value,this.ID).subscribe(
         data => {
           alert("Data updated successfully")
           console.log(this.payForm.value);

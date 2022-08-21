@@ -66,8 +66,8 @@ public class megaController {
 		return user;
 	}
 	
-	@PutMapping(path="users", consumes= {"application/json"}) 
-	public users updateAlien(@RequestBody users user) { 
+	@PutMapping(path="users/{id}", consumes= {"application/json"}) 
+	public users updateAlien(@RequestBody users user,@PathVariable("id") int id) { 
 		repo.save(user);
 		return user; 
 		}

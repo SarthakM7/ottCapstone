@@ -18,7 +18,8 @@
                         <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)" class="text-light">Please enter a valid password</div>
                     </div>
                     <div class="card-footer text-muted">
-                        
+                        <div [hidden]="isShowSent"><span class="text-success">Welcome!</span></div>
+                        <div [hidden]="isShowFail"><span class="text-danger">Invalid Credentials</span></div>
                         <button class="btn btn-primary text-light" [disabled]="!loginForm.valid" (click)="validateCheck()">Log in</button>
                     </div>
                 </form>

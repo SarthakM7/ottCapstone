@@ -13,6 +13,14 @@ public class users {
 	private String email;
 	private boolean acctype;
 	private String password;
+	private boolean status;
+	public boolean isAcctype() {
+		return acctype;
+	}
+	public void setAcctype(boolean acctype) {
+		this.acctype = acctype;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -55,10 +63,19 @@ public class users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 	@Override
 	public String toString() {
-		System.out.println();
-		return "Users [id=" + id + ", fname=" + fname + ", lname=" + lname + ", mobile=" + mobile + ", email=" + email
-				+ ", accType=" + acctype + ", password=" + password + "]" ;
+		return "users [id=" + id + ", fname=" + fname + ", lname=" + lname + ", mobile=" + mobile + ", email=" + email
+				+ ", acctype=" + acctype + ", password=" + password + ", status=" + status + "]";
 	}
+	
+	
+	
+	
 }
