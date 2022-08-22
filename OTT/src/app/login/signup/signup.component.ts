@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
 
   public toggleDisplaySuccess() {
     this.isShowSent = !this.isShowSent;  
-    setTimeout(()=>{this.route.navigate([''])},2000);
+    this.route.navigate(['']);
     ;
   }
 
@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
         //alert("Data sent successfully")
         console.log(this.signupForm.value);
         this.signupForm.reset();
-        this.toggleDisplaySuccess();
+        //this.toggleDisplaySuccess();
       },
       (error: HttpErrorResponse)=>{
         alert(error.message);

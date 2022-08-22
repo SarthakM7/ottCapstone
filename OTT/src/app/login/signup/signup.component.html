@@ -36,13 +36,32 @@
                     </div>
                     <div class="card-footer text-muted">
                         <div [hidden]="isShowSent"><span class="text-success">User created successfully!</span></div>
-                        <button class="btn btn-primary text-light" [disabled]="!signupForm.valid" (click)="AddUser()">Sign up</button>
+                        <button type="button" class="btn btn-primary text-light"  [disabled]="!signupForm.valid" (click)="AddUser()" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign up</button>
+                        
                     </div>
                 </form>
                 <button class="btn"><a routerLink="../" class=" text-light">Existing User? Log In</a></button>
             </div>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Welcome to SARV </h5>
+        
+        </div>
+        <div class="modal-body">
+            <img src="https://cdn.dribbble.com/users/129972/screenshots/3964116/75_smile.gif" height="280px" width="390px"style="padding-left:70px" >
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="toggleDisplaySuccess()">Lets Go</button>
+            
+          </div>
+      </div>
+    </div>
+  </div>
+    </div>
 
         </div>
-    </div>
+    
 

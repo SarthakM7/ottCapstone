@@ -53,6 +53,7 @@ export class PaymentComponent {
     validatecvv(control:AbstractControl):ValidationErrors | null{
       // const reCn = /^[0-9]+$/
       const reCvv = /^[0-9]+$/
+      
 
       // console.log(this.reCn.test(control.value.toString()));
       if(control.value.toString().length!=3 || !reCvv.test(control.value.toString()) )
