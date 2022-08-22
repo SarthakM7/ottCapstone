@@ -58,7 +58,7 @@ encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     <div class="d-flex flex-column">
   
                                       <span class="heading d-block">Status</span>
-                                      <div *ngIf="here.moviestatus==true; then free else prime"></div>
+                                      <div *ngIf="here.moviestatus==true; then prime else free"></div>
                                       <ng-template #free><span class="subheadings"><i class="dots"></i> Free</span></ng-template>
                                       <ng-template #prime><span class="subheadings"><i class="dots"></i> Premium</span></ng-template>
                                         
