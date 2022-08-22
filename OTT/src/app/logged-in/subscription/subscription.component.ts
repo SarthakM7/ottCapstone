@@ -53,7 +53,7 @@ disp= "";
       })
   }
   showSubscription(currUser: any){
-    //console.log(currUser);
+    console.log(currUser);
     if(currUser.accType==true){
       //console.log("inside box2");
       document.getElementById('box2')?.classList.add('select');

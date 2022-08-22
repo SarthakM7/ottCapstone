@@ -41,7 +41,7 @@ export class PaymentComponent {
       const reCn = /^[0-9]+$/
 
       // console.log(this.reCn.test(control.value.toString()));
-      if(control.value.toString().length!=8 || !reCn.test(control.value.toString()) )
+      if(control.value.toString().length!=15 || !reCn.test(control.value.toString()) )
       {
         return {invalid: true};
       }
@@ -118,7 +118,7 @@ export class PaymentComponent {
         
   
         this.allServices.updateUser(this.User[0],this.ID+1).subscribe(data => {
-          alert("Data updated successfully")
+          
       
           //this.payForm.reset();
           //this.toggleDisplaySuccess()

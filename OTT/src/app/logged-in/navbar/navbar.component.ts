@@ -83,7 +83,6 @@ export class NavbarComponent implements OnInit {
       
 
       this.sarv.updateUser(this.User[0],this.ID+1).subscribe(data => {
-        alert("Data sent successfully")
         this.User=[]
         
         this.router.navigate([''])

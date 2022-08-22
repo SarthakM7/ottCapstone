@@ -1,16 +1,6 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width,
-			initial-scale=1.0" />
-	<link rel="stylesheet" href="payment.component.css" class="css" />
-</head> -->
-
-<!-- <body> -->
 	<div class="container">
+		<button class="btn btn-dark"><a routerLink="/in" style="color: white; text-decoration:none; float: right;">Home</a></button>
 		<div class="main-content">
 			<p class="text"></p>
 		</div>
@@ -18,16 +8,16 @@
 		<div class="centre-content">
 			<h1 class="price">Premium</h1>
 			<p class="course">
-				Amazon Prime Premium now at 119/- per month
+				Get exclusive premium now at 119/- per month
 			</p>
 		</div>
-
+			<br>
 		<div class="last-content">
-			<button [disabled]=" hide_cd" type="button" class="pay-now-btn" (click)="hide_nb=!hide_nb">
+			<button [disabled]=" hide_cd" type="button" class="pay-now-btn btn btn-info" (click)="hide_nb=!hide_nb">
 				Pay with Netbanking
 			</button>
 
-			<button [disabled]=" hide_nb" type="button" class="pay-now-btn" (click)="hide_cd=!hide_cd">
+			<button [disabled]=" hide_nb" type="button" class="pay-now-btn btn btn-primary" (click)="hide_cd=!hide_cd">
 				Pay with Credit/Debit Card
 			</button>
 
@@ -55,47 +45,154 @@
 		</ul>
 
 		<form *ngIf="hide_cd" [formGroup]="payForm">
-			<br>
-			<div class="card-details">
-				<p>Pay using Credit/Debit card</p>
-				<br>
-
-				<div class="card-number">
-					<label> Card Number </label>
-					<input formControlName="cn" type="text" class="card-number-field" placeholder="###-###-###" />
-					<div *ngIf="payForm.get('cn')?.invalid">
-						<p style="color: red;">card number invalid</p>
-					</div>
-				</div>
-				<br />
-				<div class="date-number">
-					<label> Expiry Date </label>
-					<input type="date" formControlName="ed" class="date-number-field" placeholder="DD-MM-YY" id="ed" />
-				</div>
-				<br>
-				<div class="cvv-number">
-					<label> CVV number </label>
-					<input type="text" formControlName="cvv" class="cvv-number-field" placeholder="xxx" id="cvv" />
+			
+			<div class="d-flex justify-content-center mt-5 mb-5">
+				<div class="row g-3">
+	
+				  <div class="col-md-6">  
+					
+					<span><h4>Payment Method</h4></span>
+					<div class="card2">
+	
+					  <div class="accordion" id="accordionExample">
+	
+						<div class="card2">
+						  <div class="card2-header p-0">
+							<h2 class="mb-0">
+							  <button class="btn btn-light btn-block text-left p-3 rounded-0" data-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<div class="d-flex align-items-center justify-content-between">
+	
+								  <span style="padding-top: 5px; padding-right:10px"><h6>Credit Card </h6></span>
+								  <div class="icons">
+									<img src="https://i.imgur.com/2ISgYja.png" width="40">
+									<img src="https://i.imgur.com/W1vtnOV.png" width="40">
+									<img src="https://i.imgur.com/35tC99g.png" width="40">
+									</div>
+								  
+								</div>
+							  </button>
+							</h2>
+						  </div>
+	
+						  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+							<div class="card2-body payment-card2-body">
+							  
+							  <span class="font-weight-normal card2-text"><i class="fa fa-credit-card"></i> Card Number</span>
+							  <div class="input">
+								<input formControlName="cn" type="text" class="card-number-field form-control" placeholder="0000-0000-0000-0000" />
+								<div *ngIf="payForm.get('cn')?.invalid">
+									<p style="color: red;">card number invalid</p>
+								</div>
+							  </div> 
+	
+							  <div class="row mt-3 mb-3">
+	
+								<div class="col-md-6">
+	
+								  <span class="font-weight-normal card2-text"><i class="fa fa-calendar"></i> Expiry Date</span>
+								  <div class="input">
+									<input type="date" formControlName="ed" class="date-number-field form-control" placeholder="DD-MM-YY" id="ed" />
+									
+								  </div> 
+								  
+								</div>
+	
+	
+								<div class="col-md-6">
+	
+								  <span class="font-weight-normal card2-text"><i class="fa fa-lock"></i> CVC/CVV</span>
+								  <div class="input">
+	
+									
+									<input type="text" formControlName="cvv" class="cvv-number-field form-control" placeholder="000" id="cvv" />
 					<div *ngIf="payForm.get('cvv')?.invalid">
 						<p style="color: red;">cvv invalid</p>
 					</div>
-				</div>
-				<br>
-				<div class="nameholder-number">
-					<label> Card Holder name </label>
-					<input type="text" formControlName="name" class="card-name-field" placeholder="Enter your Name"
-						id="name" />
-					<div *ngIf="payForm.get('name')?.invalid">
-						<p style="color: red;">name invalid</p>
+									
+								  </div> 
+								  
+								</div>
+								
+	
+							  </div>
+	
+							  <span class="text-muted certificate-text"><i class="fa fa-lock"></i> Your Transaction is Secured with SSL Certificate</span>
+							 
+							</div>
+						  </div>
+						</div>
+						
+					  </div>
+					  
 					</div>
+	
+				  </div>
+	
+				  <div class="col-md-6" style="border-left: 1px solid rgb(124, 124, 124);">
+					  <span><h4>Summary</h4></span>
+	
+					  <div class="card2">
+	
+						<div class="d-flex justify-content-between p-3">
+	
+						  <div class="d-flex flex-column">
+	
+							<span>Premium (Billed Monthly)</span>
+							
+						  </div>
+	
+						  <div class="mt-1">
+							<sup class="super-price">₹ 119 </sup>
+							<span class="super-month">/Month</span>
+						  </div>
+						  
+						</div>
+	
+						<hr class="mt-0 line">
+	
+						<div class="p-3">
+	
+						  <div class="d-flex justify-content-between mb-2">
+	
+							<span>New User Discount</span>
+							<span>- ₹ 19 </span>
+							
+						  </div>
+						</div>
+	
+						<hr class="mt-0 line">
+	
+	
+						<div class="p-3 d-flex justify-content-between">
+	
+						  <div class="d-flex flex-column">
+	
+							<span>Today you pay(INR Rupees)</span>
+							<small>After 30 days  ₹ 119</small>
+							
+						  </div>
+						  <span>₹ 100</span>
+	
+						  
+	
+						</div>
+	
+	
+						<div class="p-3">
+	
+						<button class="btn btn-danger btn-block free-button form-control" (click)="UpdateUser()">Pay Now</button> 
+						  
+						</div>
+	
+	
+	
+						
+					  </div>
+				  </div>
+				  
 				</div>
-				<br>
-				<button type="submit" class="submit-now-btn" (click)="UpdateUser()">
-					submit
-				</button>
-			</div>
+				
+	
+			  </div>
 		</form>
 	</div>
-<!-- </body>
-
-</html> -->
