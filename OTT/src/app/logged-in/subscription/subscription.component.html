@@ -1,53 +1,62 @@
 <br>
 <div class="container">
-    <div class="row block">
-        <div class="col-lg-3"></div>
-        <div class="card col-lg-3" id='box1' style="width: 18rem;">
-            
-            <img src="assets/free.jpg" class="card-img-top" alt="Premium Photo" style=" border-radius: 10px; padding-top: 10px;">
-            <div class="card-body">
-              <h5 class="card-title">Free</h5>
-              <p class="card-text"><h3>₹0 / month </h3>Free Classics Available
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><h6>No Charge for Free Content.</h6></li>
-              </ul>
-          </div>
-          
-  <div class="card col-lg-3" id='box2' style="width: 18rem; margin-left: 10px;" (click)="goToPayment()" data-bs-toggle="modal" data-bs-target="">
-    <img src="assets/premium.png" class="card-img-top" alt="Premium Photo" style=" border-radius: 10px; padding-top: 10px;">
-    <div class="card-body">
-      <h5 class="card-title">Premium</h5>
-      <p class="card-text"><h3>₹119 / month </h3>Start your 30 days trial*
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><h6>Everything is Free.</h6></li>
+  <div class="row block">
+    <div class="col-lg-3"></div>
+    <div class="card col-lg-3" id='box1' style="width: 18rem;">
+
+      <img src="assets/free.jpg" class="card-img-top" alt="Premium Photo"
+        style=" border-radius: 10px; padding-top: 10px;">
+      <div class="card-body">
+        <h5 class="card-title">Free</h5>
+        <p class="card-text">
+        <h3>₹0 / month </h3>Free Classics Available
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <h6>No Charge for Free Content.</h6>
+        </li>
       </ul>
-  </div></div><br><br>
-<h4> {{disp}}</h4>
+    </div>
+
+    <div class="card col-lg-3" id='box2' style="width: 18rem; margin-left: 10px;" (click)="goToPayment()"
+      data-bs-toggle="modal" data-bs-target="">
+      <img src="assets/premium.png" class="card-img-top" alt="Premium Photo"
+        style=" border-radius: 10px; padding-top: 10px;">
+      <div class="card-body">
+        <h5 class="card-title">Premium</h5>
+        <p class="card-text">
+        <h3>₹119 / month </h3>Start your 30 days trial*
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <h6>Everything is Free.</h6>
+        </li>
+      </ul>
+    </div>
+  </div><br><br>
+  <h4> {{disp}}</h4>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: rgb(102, 200, 249);">
-        <h5 class="modal-title" id="exampleModalLabel">Hey, There!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        You are Already our Premium Member. Relax, and Enjoy all movies!
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 200, 249);">
+          <h5 class="modal-title" id="exampleModalLabel">Hey, There!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          You are Already our Premium Member. Relax, and Enjoy all movies!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 
 
 <br>
-  
